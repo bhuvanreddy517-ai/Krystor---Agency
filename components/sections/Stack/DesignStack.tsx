@@ -38,21 +38,19 @@ const TWO_PI = Math.PI * 2;
 /* path shape */
 const TURNS = 1.9;
 const PHASE = -Math.PI * 0.5;
-/* innermost radius as a fraction of the outer one — the clean disc the
-   stationary center content lives in. Larger on narrow screens, where the
-   text takes up proportionally more of the width. */
-const INNER_WIDE = 0.4;
-const INNER_COMPACT = 0.62;
+/* innermost radius as a fraction of the outer one — keeps orbit clear of center text */
+const INNER_WIDE = 0.48;
+const INNER_COMPACT = 0.58;
 
 /* motion */
 const SPEED = 0.021; /* path fractions per second (~48s per full traverse) */
 const HOVER_SLOW = 0.16;
 
-/* appearance along the path */
-const FADE_IN = 0.09;
-const FADE_OUT = 0.3;
-const SCALE_POW = 0.5;
-const LEAN_MAX = 11; /* degrees */
+/* appearance along the path — minimal fade and scale attenuation so cards stay fully legible */
+const FADE_IN = 0.03;
+const FADE_OUT = 0.06;
+const SCALE_POW = 0.18;
+const LEAN_MAX = 8; /* degrees */
 
 /* ---------- arc-length reparameterization ----------
    Built in units of Rx, for a given ratio = Ry/Rx and inner radius, so the

@@ -9,7 +9,7 @@
 
 .head {
   text-align: center;
-  max-width: 680px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
@@ -18,8 +18,8 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-size: 12px;
+  gap: 14px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -32,7 +32,7 @@
 .h2 {
   margin-top: 18px;
   font-weight: 900;
-  font-size: clamp(52px, 8vw, 118px);
+  font-size: clamp(76px, 12vw, 168px);
   letter-spacing: -0.04em;
   line-height: 0.96;
 }
@@ -44,15 +44,26 @@
 }
 .lede {
   margin: 24px auto 0;
-  max-width: 580px;
-  font-size: 18px;
+  max-width: 900px;
+  font-size: 26px;
   line-height: 1.65;
   color: var(--ink-2);
 }
 .cta {
-  margin-top: 28px;
+  margin-top: 44px;
   display: flex;
   justify-content: center;
+}
+.cta a {
+  font-size: 28px !important;
+  padding: 26px 56px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 20px 50px rgba(229, 9, 20, 0.35);
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, scale 0.2s ease;
+}
+.cta a:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 28px 70px rgba(20, 20, 20, 0.4);
 }
 
 /* ---------- curved memory arc ---------- */
@@ -60,8 +71,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 26px;
-  margin-top: 72px;
+  gap: 36px;
+  margin-top: 96px;
   perspective: 1400px;
   transform-style: preserve-3d;
 }
@@ -72,9 +83,9 @@
 }
 .panelInner {
   position: relative;
-  width: 218px;
-  height: 300px;
-  border-radius: 22px;
+  width: 320px;
+  height: 440px;
+  border-radius: 28px;
   background: var(--ph);
   border: 1px solid var(--line);
   box-shadow: 0 30px 70px -22px rgba(20, 20, 20, 0.2);
@@ -89,8 +100,8 @@
 }
 .panel:nth-child(1) .panelInner,
 .panel:nth-child(5) .panelInner {
-  height: 340px;
-  border-radius: 90px 90px 26px 26px;
+  height: 490px;
+  border-radius: 110px 110px 32px 32px;
 }
 .panel:hover .panelInner {
   transform: translateZ(46px) scale(1.04);
@@ -118,15 +129,15 @@
 
 .ph {
   color: #cfcfd3;
-  font-size: 22px;
+  font-size: 32px;
 }
 .pLabel {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 16px;
+  bottom: 22px;
   text-align: center;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: var(--ink-3);
@@ -136,9 +147,9 @@
 .socials {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 22px;
   flex-wrap: wrap;
-  margin: 76px auto 0;
+  margin: 100px auto 0;
   padding: 0 24px;
   position: relative;
   z-index: 4;
@@ -147,8 +158,8 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 13px 20px;
+  gap: 16px;
+  padding: 20px 32px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid var(--line);
@@ -157,7 +168,7 @@
   -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
   isolation: isolate;
-  font-size: 13.5px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--ink-2);
   transition: color 0.3s ease, border-color 0.3s ease;
@@ -183,11 +194,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
   background: rgba(20, 20, 20, 0.06);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 900;
   color: var(--ink);
   transition: background 0.3s ease, color 0.3s ease;
@@ -200,8 +211,8 @@
    so the circle-fill hover inverts them exactly like the text glyphs */
 .glyph svg {
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
 }
 .roll {
   display: inline-block;
@@ -220,7 +231,7 @@
   color: #fff;
 }
 .arrow {
-  font-size: 12px;
+  font-size: 14px;
   transition: transform 0.4s var(--ease-out-expo), color 0.3s ease;
 }
 .social:hover .arrow {
@@ -230,7 +241,7 @@
 
 /* ---------- footer ---------- */
 .footer {
-  margin-top: 96px;
+  margin-top: 110px;
   border-top: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -239,8 +250,8 @@
   max-width: var(--max);
   margin-left: auto;
   margin-right: auto;
-  padding: 26px 44px 30px;
-  font-size: 13px;
+  padding: 32px 44px 36px;
+  font-size: 16px;
   color: var(--ink-3);
 }
 .footer b {

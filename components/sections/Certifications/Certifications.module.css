@@ -33,8 +33,8 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-size: 11px;
+  gap: 14px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -44,18 +44,18 @@
   color: var(--accent);
 }
 .h2 {
-  margin-top: 12px;
+  margin-top: 14px;
   font-weight: 900;
-  font-size: clamp(44px, 7vw, 96px);
+  font-size: clamp(72px, 10vw, 140px);
   letter-spacing: -0.04em;
   line-height: 0.94;
   text-transform: uppercase;
   color: #141414;
 }
 .lede {
-  margin: 16px auto 0;
-  max-width: 720px;
-  font-size: clamp(16px, 1.3vw, 19px);
+  margin: 18px auto 0;
+  max-width: 1040px;
+  font-size: clamp(24px, 2.2vw, 30px);
   line-height: 1.55;
   color: #5c5c63;
   text-wrap: pretty;
@@ -116,7 +116,7 @@
 }
 .stage {
   position: relative;
-  --panel-w: clamp(380px, min(68vw, calc((100vh - 380px) * 1.6)), 1160px);
+  --panel-w: clamp(540px, min(82vw, calc((100vh - 310px) * 1.6)), 1680px);
   width: var(--panel-w);
   height: calc(var(--panel-w) * 0.625);
   transform-style: preserve-3d;
@@ -126,10 +126,10 @@
 /* clean rectangular credential panels, straight edges, subtle radius */
 .panel {
   position: absolute;
-  inset: 0; /* every panel fills the stage; the motion moves it from there */
-  border-radius: 10px;
+  inset: 0;
+  border-radius: 12px;
   backface-visibility: hidden;
-  padding: 0 clamp(26px, 3vw, 44px) clamp(22px, 2.6vh, 34px);
+  padding: 0 clamp(30px, 3.4vw, 52px) clamp(26px, 3vh, 40px);
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -156,12 +156,11 @@
 /* ---------- identity band: stays in the exposed upper area ---------- */
 .band {
   flex: 0 0 auto;
-  height: 50px;
-  /* panels are square now, so the band can run the full width */
+  height: 56px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-size: 11px;
+  gap: 18px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -179,29 +178,27 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: clamp(10px, 1.4vh, 18px);
+  gap: 16px;
+  margin-bottom: clamp(12px, 1.8vh, 22px);
 }
-/* official marks always sit on a light plate so brand colours stay true
-   on dark and light panels alike */
 .logoPlate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: clamp(32px, 4.4vh, 44px);
-  padding: 0 12px;
-  border-radius: 8px;
+  height: clamp(42px, 6vh, 58px);
+  padding: 0 16px;
+  border-radius: 10px;
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(20, 20, 20, 0.14);
 }
 .logoPlate img {
-  height: clamp(15px, 2.1vh, 21px);
+  height: clamp(22px, 3vh, 32px);
   width: auto;
   display: block;
   object-fit: contain;
 }
 .issuerName {
-  font-size: clamp(15px, 1.7vw, 24px);
+  font-size: clamp(22px, 2.8vw, 36px);
   font-weight: 800;
   letter-spacing: -0.005em;
   text-transform: uppercase;
@@ -214,7 +211,6 @@
 .org {
   opacity: 0.78;
 }
-/* issuing organisation — the line that makes a panel read as a credential */
 .issuer {
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -234,31 +230,31 @@
 .record {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, auto));
-  gap: 0 clamp(16px, 2.2vw, 34px);
-  margin-bottom: 14px;
-  padding-bottom: 12px;
+  gap: 0 clamp(18px, 2.6vw, 40px);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 1px solid currentColor;
   border-color: color-mix(in srgb, currentColor 16%, transparent);
 }
 .record dt {
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.45;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .record dd {
   font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
-  font-size: 11.5px;
+  font-size: 16px;
   font-weight: 600;
   opacity: 0.92;
   white-space: nowrap;
 }
 .verifyLink {
   display: inline-block;
-  margin-top: 10px;
-  font-size: 11px;
+  margin-top: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.08em;
   border-bottom: 1.5px solid currentColor;
@@ -267,7 +263,7 @@
 
 /* the certification's own name */
 .title {
-  font-size: clamp(22px, 3vw, 44px);
+  font-size: clamp(34px, 4.8vw, 68px);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.02;

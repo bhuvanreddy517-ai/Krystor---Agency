@@ -821,91 +821,6 @@ export const PROJECTS: Project[] = [
     },
   },
 
-  /* ─────────────── 11 · GHOST RIDER (GitHub) ─────────────── */
-  {
-    slug: "ghost-rider",
-    title: "Ghost Rider — Spirit of Vengeance",
-    tags: ["WebGL", "GLSL", "Creative Dev"],
-    year: "2026",
-    oneLiner:
-      "A supernatural film you can touch — six chapters of scroll-directed cinema with procedural hellfire rendered in WebGL.",
-    contribution:
-      "Six chapters, procedural hellfire shaders, a chase you scroll through.",
-    coverLabel: "GHOST RIDER",
-    cover: {
-      bg: "#0B0B0E",
-      ink: "light",
-      src: "/images/projects/ghostrider-cover.jpg",
-      variant: "photo",
-      focus: "center 30%", /* the split face */
-    },
-    repo: "https://github.com/gireeshkumarreddy/Ghost-Rider-",
-    site: { url: "https://ghost-rider-orpin.vercel.app", label: "Live site" },
-    fr: {
-      title: "Ghost Rider — Spirit of Vengeance",
-      oneLiner:
-        "Un film surnaturel que l’on touche — six chapitres de cinéma dirigé au scroll, avec un feu infernal procédural en WebGL.",
-      contribution:
-        "Six chapitres, des shaders de feu procédural, une poursuite au scroll.",
-      tags: ["WebGL", "GLSL", "Dév créatif"],
-      study: {
-        role: "Design & développement — solo",
-        timeline: "Août 2026",
-        context:
-          "Une expérience cinématique en six chapitres : l’Éveil et son feu procédural, une poursuite de 16 secondes dirigée au scroll, une vitrine de moto en 3D, un mur cinématique interactif à colonnes infinies.",
-        problem:
-          "Une bande-annonce se regarde. Celle-ci devait se conduire — le visiteur tient le rythme du film, chapitre après chapitre.",
-        process: [
-          {
-            title: "Le feu écrit en shaders",
-            body: "Le feu infernal et l’atmosphère naissent de shaders de bruit procédural en GLSL — rien n’est pré-rendu, tout réagit.",
-          },
-          {
-            title: "Un encodage pensé pour le scrub",
-            body: "Vidéo H.264 all-intra pour que la recherche d’image soit instantanée, orchestrée par des timelines GSAP.",
-          },
-        ],
-        decisions: [
-          {
-            title: "Des chapitres, pas des sections",
-            why: "Nommer les blocs « Chapitre I, II, III » impose une grammaire narrative — le visiteur lit un film, pas une page.",
-          },
-        ],
-        outcomes: ["Déployé et en ligne sur Vercel", "Six chapitres, du hero au mur d’archives"],
-        reflection:
-          "Le WebGL n’est pas un effet : c’est une matière. Quand la lumière est calculée, la scène respire avec le visiteur.",
-        note: "Concept de fan non officiel — sans affiliation avec les ayants droit.",
-      },
-    },
-    study: {
-      role: "Design & Engineering — solo",
-      timeline: "August 2026",
-      context:
-        "A six-chapter cinematic experience: The Awakening with procedural hellfire, a scroll-directed 16-second chase, a 3D bike showcase, and an interactive cinematic wall with infinite column motion.",
-      problem:
-        "A trailer is watched. This one had to be driven — the visitor holding the film's pace, chapter by chapter.",
-      process: [
-        {
-          title: "Fire written in shaders",
-          body: "The hellfire and atmosphere come from procedural noise shaders in GLSL — nothing pre-rendered, everything reactive.",
-        },
-        {
-          title: "Encoding built for scrubbing",
-          body: "All-intra H.264 video so frame-seeking is instant, orchestrated by GSAP timelines.",
-        },
-      ],
-      decisions: [
-        {
-          title: "Chapters, not sections",
-          why: "Naming the blocks 'Chapter I, II, III' imposes a narrative grammar — the visitor reads a film, not a page.",
-        },
-      ],
-      outcomes: ["Deployed and live on Vercel", "Six chapters, from hero to archive wall"],
-      reflection:
-        "WebGL isn't an effect, it's a material. When light is computed, the scene breathes with the visitor.",
-      note: "Unofficial fan-made concept — not affiliated with the rights-holders.",
-    },
-  },
 
   /* ─────────────── 12 · HABU (GitHub) ─────────────── */
   {
@@ -1350,6 +1265,202 @@ export const PROJECTS: Project[] = [
       reflection:
         "Knowing what to remove is a design skill — this project is only about that.",
       note: "Unofficial fan-made concept — not affiliated with the rights-holders. Visual piece: no public repository.",
+    },
+  },
+
+  /* ─────────────── HOUSE OF BARBER (Live App) ─────────────── */
+  {
+    slug: "house-of-barber",
+    title: "House of Barber — Luxury Grooming & Booking Experience",
+    tags: ["UX/UI Design", "Next.js", "Online Booking", "Branding"],
+    year: "2026",
+    oneLiner:
+      "A premium digital experience and real-time appointment booking platform for modern luxury grooming studios.",
+    contribution:
+      "End-to-end product design, brand system, and full-stack booking integration.",
+    coverLabel: "HOUSE OF BARBER",
+    cover: {
+      bg: "#18181b",
+      ink: "light",
+      variant: "photo",
+      src: "/images/projects/house-of-barber-cover.jpg",
+      focus: "center center",
+    },
+    site: { url: "https://house-of-barber-32ic.vercel.app/", label: "house-of-barber.vercel.app" },
+    fr: {
+      title: "House of Barber — Réservation & Expérience Coiffure Luxe",
+      oneLiner: "Une plateforme de réservation en ligne haut de gamme et système de prise de rendez-vous en temps réel.",
+      contribution: "Design produit de bout en bout, système de marque et intégration de réservation.",
+      tags: ["Design UX/UI", "Next.js", "Réservation en ligne", "Branding"],
+      study: {
+        role: "Product Designer & développeur Lead",
+        timeline: "2026",
+        context: "Conception et développement d'une plateforme de réservation moderne et élégante.",
+        problem: "Créer un parcours de réservation sans friction tout en transmettant l'élégance de la marque.",
+        process: [
+          { title: "Design d'expérience fluide", body: "Parcours de réservation réduit à 3 étapes simples." }
+        ],
+        decisions: [
+          { title: "Réservation instantanée sans friction", why: "Maximise le taux de conversion sur mobile." }
+        ],
+        outcomes: ["Application déployée en ligne sur Vercel"],
+        reflection: "La simplicité de réservation améliore directement la conversion."
+      }
+    },
+    study: {
+      role: "Lead Product Designer & Developer",
+      timeline: "2026",
+      context:
+        "Designing and shipping a luxury digital booking web application for high-end barber studios.",
+      problem:
+        "Traditional booking software is clunky and generic. The challenge: create a frictionless, modern booking experience that mirrors the premium physical studio atmosphere.",
+      process: [
+        {
+          title: "Streamlined Booking Funnel",
+          body: "Reduced appointment scheduling from 7 confusing steps to 3 effortless taps.",
+        },
+        {
+          title: "Responsive Studio System",
+          body: "Mobile-first layout with real-time slot selection and service customization.",
+        },
+      ],
+      decisions: [
+        {
+          title: "Value-first booking flow",
+          why: "Selecting services and times before requiring identity verification increases completion rates.",
+        },
+      ],
+      outcomes: ["Deployed live on Vercel with active online booking"],
+      reflection:
+        "When utility matches luxury aesthetics, booking conversion increases naturally.",
+    },
+  },
+
+  /* ─────────────── DENTAL AFFECTION (Live App) ─────────────── */
+  {
+    slug: "dental-affection",
+    title: "Dental Affection — Modern Dental Care & Patient Portal",
+    tags: ["Healthcare UX", "Patient Portal", "React", "Design System"],
+    year: "2026",
+    oneLiner:
+      "A calm, patient-centric digital healthcare platform and appointment scheduling system for modern dental practices.",
+    contribution:
+      "UX architecture, patient scheduling flow, and compassionate healthcare UI design system.",
+    coverLabel: "DENTAL AFFECTION",
+    cover: {
+      bg: "#0F172A",
+      ink: "light",
+      variant: "photo",
+      src: "/images/projects/dental-affection-cover.jpg",
+      focus: "center center",
+    },
+    site: { url: "https://dental-affection.vercel.app/", label: "dental-affection.vercel.app" },
+    fr: {
+      title: "Dental Affection — Portail Patient & Soins Dentaires",
+      oneLiner: "Une plateforme de santé numérique apaisante et système de prise de rendez-vous pour cabinets dentaires.",
+      contribution: "Architecture UX, parcours patient et design system médical.",
+      tags: ["UX Santé", "Portail Patient", "React", "Design System"],
+      study: {
+        role: "Product Designer & développeur Lead",
+        timeline: "2026",
+        context: "Conception d'un portail patient apaisant et accessible.",
+        problem: "Réduire l'anxiété dentaire grâce à un parcours digital clair.",
+        process: [{ title: "Parcours apaisé", body: "Information claire et réservation en 2 clics." }],
+        decisions: [{ title: "Confiance visuelle", why: "Utilisation de tons apaisants et de typographies lisibles." }],
+        outcomes: ["Déployé et en ligne sur Vercel"],
+        reflection: "Le design de santé exige de l'empathie avant la technique."
+      }
+    },
+    study: {
+      role: "Lead Product Designer & Developer",
+      timeline: "2026",
+      context:
+        "Designing a reassuring, accessible digital healthcare portal for modern dental clinics.",
+      problem:
+        "Medical websites are often intimidating and hard to navigate. The goal: replace dental anxiety with clarity, empathy, and easy online scheduling.",
+      process: [
+        {
+          title: "Empathy-Driven UX",
+          body: "Clear treatment guides, transparent pricing, and instant online doctor selection.",
+        },
+        {
+          title: "Accessible UI System",
+          body: "High-contrast, large touch targets, and AAA accessibility standards.",
+        },
+      ],
+      decisions: [
+        {
+          title: "Calm visual tone",
+          why: "Deep blues and soft neutrals lower cognitive stress during medical appointment booking.",
+        },
+      ],
+      outcomes: ["Live production deployment on Vercel"],
+      reflection:
+        "In healthcare UX, clarity and empathy are the most critical features.",
+    },
+  },
+
+  /* ─────────────── PASTELITO (Live App) ─────────────── */
+  {
+    slug: "pastelito",
+    title: "Pastelito — Luxury Lipstick & Beauty E-Commerce Experience",
+    tags: ["Beauty & Cosmetics", "E-Commerce UX", "Shade Matcher", "Branding"],
+    year: "2026",
+    oneLiner:
+      "A high-end luxury lipstick e-commerce experience featuring interactive shade customization, velvet texture previews, and editorial beauty storytelling.",
+    contribution:
+      "Cosmetics brand system, interactive lipstick shade selector, and full-stack e-commerce UI.",
+    coverLabel: "PASTELITO LUXURY LIPSTICK",
+    cover: {
+      bg: "#831843",
+      ink: "light",
+      variant: "photo",
+      src: "/images/projects/pastelito-cover.jpg",
+      focus: "center center",
+    },
+    site: { url: "https://jocular-pastelito-b90519.netlify.app/", label: "jocular-pastelito.netlify.app" },
+    fr: {
+      title: "Pastelito — E-Commerce Rouge à Lèvres & Beauté de Luxe",
+      oneLiner: "Une expérience e-commerce haut de gamme pour marque de rouge à lèvres avec sélecteur de teintes interactif et visuels éditoriaux.",
+      contribution: "Identité de marque cosmétique, sélecteur de teintes interactif et UI e-commerce.",
+      tags: ["Beauté & Cosmétiques", "E-Commerce UX", "Sélecteur de Teintes", "Branding"],
+      study: {
+        role: "Product Designer & développeur Lead",
+        timeline: "2026",
+        context: "Création d'une plateforme e-commerce luxueuse pour marque de rouges à lèvres.",
+        problem: "Permettre l'essayage et le choix des teintes de rouge à lèvres en ligne avec fidélité de couleur.",
+        process: [{ title: "Sélecteur de Teintes Interactif", body: "Visualisation instantanée des teintes mat et velours." }],
+        decisions: [{ title: "Fidélité des teintes", why: "Rendre l'expérience d'achat cosmétique aussi immersive qu'en boutique." }],
+        outcomes: ["Déployé et en ligne sur Netlify"],
+        reflection: "L'élégance visuelle et la précision des teintes maximisent la conversion beauté."
+      }
+    },
+    study: {
+      role: "Lead Product Designer & Developer",
+      timeline: "2026",
+      context:
+        "Designing and developing a luxury digital storefront for a premium lipstick & cosmetics brand.",
+      problem:
+        "Online cosmetics shopping often lacks tactile feel and color confidence. The design challenge: build an interactive lipstick shade-matching experience that gives buyers 100% color confidence.",
+      process: [
+        {
+          title: "Interactive Shade Matcher",
+          body: "Real-time shade previews across different skin tones and lighting conditions.",
+        },
+        {
+          title: "Editorial Beauty Storytelling",
+          body: "High-contrast luxury typography, rich velvet textures, and frictionless checkout flows.",
+        },
+      ],
+      decisions: [
+        {
+          title: "Tactile color feedback",
+          why: "Subtle micro-animations during shade selection recreate the luxury in-store counter experience.",
+        },
+      ],
+      outcomes: ["Deployed live on Netlify with active shade matcher"],
+      reflection:
+        "When luxury aesthetics meet intuitive shade utility, e-commerce conversion increases naturally.",
     },
   },
 ];

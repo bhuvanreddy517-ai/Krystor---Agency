@@ -22,13 +22,13 @@
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 12px;
+  gap: 16px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-3);
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 .eyebrow span {
   color: var(--accent);
@@ -36,7 +36,7 @@
 }
 .eyebrow::after {
   content: "";
-  flex: 0 0 34px;
+  flex: 0 0 38px;
   height: 1px;
   background: var(--accent);
 }
@@ -49,7 +49,7 @@
 }
 .h2 {
   font-weight: 900;
-  font-size: clamp(44px, 5.8vw, 80px);
+  font-size: clamp(72px, 9.5vw, 132px);
   letter-spacing: -0.035em;
   line-height: 0.98;
 }
@@ -60,8 +60,8 @@
   color: var(--accent);
 }
 .lede {
-  max-width: 360px;
-  font-size: 15px;
+  max-width: 600px;
+  font-size: 24px;
   line-height: 1.6;
   color: var(--ink-2);
 }
@@ -74,12 +74,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 480px;
+  min-height: 640px;
 }
 .track {
   position: relative;
   width: 100%;
-  height: 470px;
+  height: 620px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,13 +87,13 @@
 }
 .card {
   position: absolute;
-  width: 300px;
+  width: 440px;
   will-change: transform, opacity;
 }
 .inner {
   display: block;
   background: #fff;
-  border-radius: 20px;
+  border-radius: 28px;
   border: 1px solid rgba(20, 20, 20, 0.05);
   box-shadow: var(--shadow-lg);
   overflow: hidden;
@@ -106,25 +106,25 @@
 
 .cover {
   position: relative;
-  height: 258px; /* trimmed to make room for the contribution line */
+  height: 350px;
   background: var(--ph);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--ink-3);
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
   overflow: hidden;
 }
 .award {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: 16px;
+  left: 16px;
   background: #fff;
   border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 11px;
+  padding: 8px 16px;
+  font-size: 13px;
   font-weight: 800;
   color: var(--ink);
   box-shadow: 0 8px 20px rgba(20, 20, 20, 0.1);
@@ -142,14 +142,14 @@
 
 /* verified brand mark centred on its brand ground */
 .coverBrand {
-  width: min(66%, 200px);
+  width: min(68%, 240px);
   height: auto;
   object-fit: contain;
 }
 /* typographic cover for projects with no supplied asset yet */
 .coverMark {
   font-weight: 900;
-  font-size: clamp(44px, 4.2vw, 60px);
+  font-size: clamp(60px, 6vw, 86px);
   letter-spacing: -0.04em;
   line-height: 1;
 }
@@ -157,18 +157,18 @@
 /* verified brand destination — sibling of the card link (never nested) */
 .siteChip {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 16px;
+  right: 16px;
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(6px);
   border: 1px solid rgba(20, 20, 20, 0.08);
   border-radius: 999px;
-  padding: 7px 12px;
-  font-size: 11px;
+  padding: 8px 16px;
+  font-size: 13px;
   font-weight: 800;
   color: var(--ink);
   opacity: 0;
@@ -202,10 +202,10 @@
 }
 
 .meta {
-  padding: 18px 20px 20px;
+  padding: 26px 30px 28px;
 }
 .meta h3 {
-  font-size: 16.5px;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -213,8 +213,8 @@
 }
 /* the card's one-line "what I did" — clamped so FR length can't break the arc */
 .contribution {
-  margin-top: 8px;
-  font-size: 12.5px;
+  margin-top: 12px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--ink-2);
   display: -webkit-box;
@@ -223,25 +223,25 @@
   overflow: hidden;
 }
 .tags {
-  font-size: 10.5px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.06em;
   color: var(--ink-3);
-  margin-top: 7px;
+  margin-top: 10px;
 }
 .metaFoot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 .year {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   color: var(--accent);
 }
 .open {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--ink);
   opacity: 0;

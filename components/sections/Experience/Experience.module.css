@@ -48,13 +48,13 @@
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 12px;
+  gap: 16px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-3);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 .eyebrow span {
   color: var(--accent);
@@ -62,16 +62,16 @@
 }
 .eyebrow::after {
   content: "";
-  flex: 0 0 34px;
+  flex: 0 0 38px;
   height: 1px;
   background: var(--accent);
 }
 .h2 {
   font-weight: 900;
-  font-size: clamp(38px, 4.8vw, 68px);
+  font-size: clamp(68px, 8.5vw, 116px);
   letter-spacing: -0.035em;
   line-height: 1.0;
-  max-width: 680px;
+  max-width: 1000px;
 }
 .serif {
   font-family: var(--font-serif), Georgia, serif;
@@ -94,8 +94,8 @@
 }
 .stage {
   position: relative;
-  width: min(84vw, 1340px);
-  --panel-h: clamp(340px, min(62vh, calc(100vh - 350px)), 720px);
+  width: min(94vw, 1850px);
+  --panel-h: clamp(440px, min(72vh, calc(100vh - 310px)), 840px);
   height: calc(var(--panel-h) + 150px);
   transform-style: preserve-3d;
   transform: rotateX(6deg);
@@ -111,8 +111,8 @@
   height: var(--panel-h);
   display: flex;
   flex-direction: column;
-  padding: 0 clamp(30px, 3.4vw, 54px) clamp(24px, 3vh, 40px);
-  border-radius: 6px; /* sharp boards, not rounded app cards */
+  padding: 0 clamp(34px, 3.8vw, 60px) clamp(28px, 3.4vh, 46px);
+  border-radius: 8px;
   color: #fff;
   cursor: pointer;
   will-change: transform, opacity;
@@ -131,16 +131,16 @@
 /* the exposed band — waiting boards reveal exactly this much (UP = 46px),
    so all of their text is guaranteed visible and collision-free */
 .strip {
-  height: 50px;
-  flex: 0 0 50px;
+  height: 56px;
+  flex: 0 0 56px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   overflow: hidden;
   white-space: nowrap;
 }
 .year {
-  font-size: 12.5px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: 0.08em;
   opacity: 0.95;
@@ -148,11 +148,11 @@
 }
 .type {
   margin-left: auto;
-  font-size: 10px;
+  font-size: 13.5px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 5px 11px;
+  padding: 6px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.2);
 }
@@ -161,7 +161,7 @@
 }
 
 .company {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 800;
   opacity: 0.92;
   overflow: hidden;
@@ -175,16 +175,16 @@
   flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto; /* content | company mark */
-  gap: clamp(20px, 3vw, 52px);
+  gap: clamp(24px, 3.4vw, 60px);
   align-items: stretch;
   /* placement adapts per company — dense panels drop the mark underneath */
 }
 .logoBelow {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: 1fr auto;
-  gap: clamp(14px, 2vh, 24px);
+  gap: clamp(16px, 2.4vh, 28px);
   min-height: 0;
-  overflow: hidden; /* content clips inside the panel, never spills past it */
+  overflow: hidden;
   opacity: 0;
   transform: translateY(14px);
   transition: opacity 0.36s ease, transform 0.5s var(--ease-out-expo);
@@ -204,12 +204,10 @@
 }
 
 /* ---------- company mark: right-side anchor ---------- */
-/* when the mark sits below, it aligns left and gets breathing room above,
-   reading as the panel's closing element rather than a sidebar */
 .logoBelow .logoCol {
   align-items: flex-end;
   justify-content: flex-start;
-  padding-top: clamp(10px, 1.6vh, 18px);
+  padding-top: clamp(12px, 1.8vh, 20px);
   border-top: 1px solid currentColor;
   border-color: color-mix(in srgb, currentColor 18%, transparent);
 }
@@ -217,8 +215,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* pushed forward on the panel's own Z axis, so it parallaxes naturally
-     with the 3D movement rather than being animated separately */
   transform: translateZ(30px);
   transform-style: preserve-3d;
 }
@@ -227,7 +223,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 18px;
   box-shadow: 0 16px 34px -14px rgba(20, 20, 20, 0.34);
   transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s ease;
 }
@@ -235,7 +231,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* never distorts the supplied artwork */
+  object-fit: contain;
 }
 .card:hover .logoWrap,
 .board:hover .logoWrap {
@@ -243,29 +239,26 @@
   box-shadow: 0 24px 46px -14px rgba(20, 20, 20, 0.42);
 }
 
-/* logos that ship with their own background: shown as a clean tile */
 .tile {
-  width: clamp(88px, 9.5vw, 132px);
+  width: clamp(100px, 10.5vw, 150px);
   aspect-ratio: 1;
   background: #fff;
 }
 
-/* transparent artwork: a light plate, width derived from its true aspect */
 .plate {
-  height: clamp(64px, 7vh, 92px);
-  width: calc(clamp(64px, 7vh, 92px) * var(--logo-aspect, 3));
-  max-width: min(300px, 26vw);
+  height: clamp(74px, 8vh, 104px);
+  width: calc(clamp(74px, 8vh, 104px) * var(--logo-aspect, 3));
+  max-width: min(340px, 28vw);
   background: #fff;
-  padding: 0 clamp(12px, 1.4vw, 20px);
-  border-radius: 14px;
+  padding: 0 clamp(14px, 1.6vw, 24px);
+  border-radius: 16px;
 }
 .plate img {
   object-fit: contain;
 }
 
-/* no official file yet — typographic stand-in in the panel's own voice */
 .mono {
-  width: clamp(88px, 9.5vw, 132px);
+  width: clamp(100px, 10.5vw, 150px);
   aspect-ratio: 1;
   background: rgba(255, 255, 255, 0.14);
   box-shadow: none;
@@ -274,7 +267,7 @@
   background: rgba(20, 20, 20, 0.08);
 }
 .mono b {
-  font-size: clamp(15px, 1.5vw, 20px);
+  font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 900;
   letter-spacing: -0.02em;
   text-align: center;
@@ -283,15 +276,15 @@
 }
 
 .role {
-  font-size: clamp(26px, 3vw, 46px);
+  font-size: clamp(40px, 4.8vw, 68px);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.02;
-  max-width: 20ch;
+  max-width: 22ch;
 }
 .loc {
-  margin-top: 10px;
-  font-size: 11.5px;
+  margin-top: 12px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -301,10 +294,10 @@
 /* two-column body — spacious, editorial */
 .body {
   margin-top: auto;
-  padding-top: clamp(18px, 2.6vh, 30px);
+  padding-top: clamp(20px, 3vh, 34px);
   display: grid;
   grid-template-columns: 1.35fr 1fr;
-  gap: clamp(24px, 3vw, 56px);
+  gap: clamp(28px, 3.4vw, 64px);
   align-items: start;
   border-top: 1px solid rgba(255, 255, 255, 0.26);
   min-height: 0;
@@ -313,32 +306,32 @@
   border-top-color: rgba(20, 20, 20, 0.14);
 }
 .lbl {
-  font-size: 10.5px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   opacity: 0.62;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .lblGap {
-  margin-top: clamp(14px, 2vh, 22px);
+  margin-top: clamp(16px, 2.2vh, 26px);
 }
 .summary {
-  font-size: clamp(14px, 1.05vw, 16.5px);
+  font-size: clamp(20px, 1.6vw, 25px);
   line-height: 1.55;
   opacity: 0.96;
 }
 .list {
-  margin: 12px 0 0 17px;
-  font-size: clamp(12.5px, 0.92vw, 14px);
+  margin: 14px 0 0 18px;
+  font-size: clamp(17px, 1.3vw, 20px);
   line-height: 1.5;
   opacity: 0.86;
 }
 .list li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .outcome {
-  font-size: clamp(15px, 1.25vw, 20px);
+  font-size: clamp(24px, 2vw, 32px);
   font-weight: 800;
   line-height: 1.3;
 }
