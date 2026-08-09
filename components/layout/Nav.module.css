@@ -17,30 +17,30 @@
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 52px;
-  width: min(1500px, 94vw);
+  gap: 36px;
+  width: min(1200px, 94vw);
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border: 3px solid var(--line);
+  border: 1.5px solid var(--line);
   border-radius: 999px;
-  padding: 30px 48px 30px 60px;
-  box-shadow: 0 28px 90px -10px rgba(20, 20, 20, 0.22);
+  padding: 14px 28px 14px 36px;
+  box-shadow: 0 16px 50px -10px rgba(20, 20, 20, 0.15);
   transition: box-shadow 0.35s ease, padding 0.35s ease, background 0.35s ease, transform 0.35s ease;
-  transform: scale(1.35);
+  transform: scale(1);
   transform-origin: top center;
 }
 .scrolled .cap {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 32px 100px -12px rgba(20, 20, 20, 0.28);
-  transform: scale(1.22);
+  box-shadow: 0 20px 60px -12px rgba(20, 20, 20, 0.2);
+  transform: scale(0.96);
 }
 
 .logo {
   font-weight: 900;
-  font-size: 30px;
+  font-size: 22px;
   letter-spacing: -0.035em;
   margin-right: auto;
   transition: letter-spacing 0.35s cubic-bezier(0.33, 1, 0.68, 1);
@@ -61,14 +61,14 @@
 /* --- links with roll-over micro-interaction --- */
 .links {
   display: flex;
-  gap: 20px;
-  font-size: 26px;
+  gap: 8px;
+  font-size: 15px;
   font-weight: 800;
   color: var(--ink-2);
 }
 .links a {
   position: relative;
-  padding: 18px 36px;
+  padding: 10px 22px;
   border-radius: 999px;
   overflow: hidden;
   isolation: isolate;
