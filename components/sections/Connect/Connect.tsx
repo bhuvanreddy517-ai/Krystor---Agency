@@ -53,7 +53,7 @@ export default function Connect() {
           {t("connect.lede")}
         </p>
         <div className={styles.cta}>
-          <Button href="mailto:kolligireeshkumarreddy0622@gmail.com" variant="primary" arrow>
+          <Button href="/contact" variant="primary" arrow>
             {t("connect.cta")}
           </Button>
         </div>

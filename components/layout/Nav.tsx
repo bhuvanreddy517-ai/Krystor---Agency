@@ -13,7 +13,7 @@ const LINKS = [
   { key: "nav.about", href: "/#about", watch: "about" },
   { key: "nav.work", href: "/#work", watch: "work" },
   { key: "nav.liveWorks", href: "/live-works", watch: null },
-  { key: "nav.contact", href: "/#contact", watch: "contact" },
+  { key: "nav.contact", href: "/contact", watch: "contact" },
 ];
 
 export default function Nav() {
