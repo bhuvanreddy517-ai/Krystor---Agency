@@ -53,6 +53,9 @@
   margin-top: 44px;
   display: flex;
   justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .cta a {
   font-size: 28px !important;
@@ -64,6 +67,25 @@
 .cta a:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 28px 70px rgba(20, 20, 20, 0.4);
+}
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px !important;
+  padding: 24px 44px !important;
+  font-weight: 800 !important;
+  border-radius: 999px;
+  background: #25d366 !important;
+  color: #ffffff !important;
+  text-decoration: none;
+  box-shadow: 0 16px 40px rgba(37, 211, 102, 0.35) !important;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease;
+}
+.waBtn:hover {
+  transform: translateY(-4px) scale(1.05) !important;
+  background: #1da851 !important;
+  box-shadow: 0 24px 60px rgba(37, 211, 102, 0.45) !important;
 }
 
 /* ---------- curved memory arc ---------- */

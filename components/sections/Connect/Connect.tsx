@@ -56,6 +56,14 @@ export default function Connect() {
           <Button href="/contact" variant="primary" arrow>
             {t("connect.cta")}
           </Button>
+          <a
+            href="https://wa.me/918217527309"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.waBtn}
+          >
+            💬 Chat on WhatsApp (+91 8217527309) ↗
+          </a>
         </div>
       </div>
 

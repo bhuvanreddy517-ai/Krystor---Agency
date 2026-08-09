@@ -90,6 +90,22 @@ export default function ContactModal({ onClose, isStandalonePage = false }: Cont
           </button>
         </div>
 
+        {/* WhatsApp Box */}
+        <div className={styles.whatsappBox}>
+          <div className={styles.whatsappLeft}>
+            <span className={styles.whatsappIcon}>💬</span>
+            <span>WhatsApp: +91 8217527309</span>
+          </div>
+          <a
+            href="https://wa.me/918217527309"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whatsappBtn}
+          >
+            Chat on WhatsApp ↗
+          </a>
+        </div>
+
         {/* Form */}
         <form onSubmit={handleSubmit}>
           <div className={styles.formGrid}>
