@@ -59,6 +59,8 @@ const personJsonLd = {
   sameAs: PERSON.sameAs,
 };
 
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -68,6 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <LanguageProvider>
           <SmoothScroll>{children}</SmoothScroll>
+          <FloatingWhatsApp />
         </LanguageProvider>
         <script
           type="application/ld+json"
