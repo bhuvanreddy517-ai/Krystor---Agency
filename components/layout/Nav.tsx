@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
-import LanguageToggle from "./LanguageToggle";
 import { useLang } from "@/lib/i18n";
 import styles from "./Nav.module.css";
 
@@ -120,7 +119,6 @@ export default function Nav() {
         </nav>
 
         <div className={styles.right}>
-          <LanguageToggle />
           <button
             type="button"
             className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}

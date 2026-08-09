@@ -232,30 +232,18 @@ const LanguageContext = createContext<Ctx>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+  const [lang] = useState<Lang>("en");
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("lang") as Lang | null;
-    if (saved === "en" || saved === "fr") {
-      setLangState(saved);
-      document.documentElement.lang = saved;
-    }
+    document.documentElement.lang = "en";
   }, []);
 
-  const setLang = (l: Lang) => {
-    setLangState(l);
-    try {
-      window.localStorage.setItem("lang", l);
-    } catch {
-      /* private mode — the choice simply won't persist */
-    }
-    document.documentElement.lang = l;
-  };
+  const setLang = () => {};
 
-  const t = (k: string) => DICT[k]?.[lang] ?? DICT[k]?.en ?? k;
+  const t = (k: string) => DICT[k]?.en ?? k;
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ lang: "en", setLang, t }}>
       {children}
     </LanguageContext.Provider>
   );
