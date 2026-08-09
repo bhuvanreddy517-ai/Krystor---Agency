@@ -208,12 +208,12 @@ export default function Connect() {
 
       <footer className={styles.footer}>
         <span>
-          {t("connect.credit")} <b>Gireesh</b>
+          {t("connect.credit")} <b>Krystor Agency</b>
         </span>
         <a href="#home" className={styles.top}>
           {t("connect.top")}
         </a>
-        <span>© 2026 Gireesh Kumar Reddy Kolli</span>
+        <span>© 2026 Krystor Agency</span>
       </footer>
     </section>
   );

@@ -60,7 +60,7 @@ const T_RELEASE = 0.9; /* canvas begins to release (fade) */
 const MOUSE_X = 0.11;
 const MOUSE_Y = 0.07;
 
-export default function TunnelIntro({ text = "GIREESH" }: { text?: string }) {
+export default function TunnelIntro({ text = "KRYSTOR AGENCY" }: { text?: string }) {
   const rootRef = useRef<HTMLElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -271,18 +271,44 @@ export default function TunnelIntro({ text = "GIREESH" }: { text?: string }) {
       if (!ctx) return;
       ctx.scale(dpr, dpr);
       const family = getComputedStyle(document.body).fontFamily || "Inter, sans-serif";
-      let size = h * 0.62;
-      ctx.font = `900 ${size}px ${family}`;
-      if ("letterSpacing" in ctx) {
-        (ctx as CanvasRenderingContext2D & { letterSpacing: string }).letterSpacing = "-0.04em";
+
+      const words = text.split(" ");
+      if (words.length > 1) {
+        let size = h * 0.42;
+        ctx.font = `900 ${size}px ${family}`;
+        if ("letterSpacing" in ctx) {
+          (ctx as CanvasRenderingContext2D & { letterSpacing: string }).letterSpacing = "-0.04em";
+        }
+        let maxW = 0;
+        words.forEach((wrd) => {
+          maxW = Math.max(maxW, ctx.measureText(wrd).width);
+        });
+        size = Math.min(size, (size * (w * 0.94)) / Math.max(1, maxW));
+        ctx.font = `900 ${size}px ${family}`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "#000";
+
+        const lineH = size * 0.92;
+        const startY = h / 2 - ((words.length - 1) * lineH) / 2;
+        words.forEach((wrd, i) => {
+          ctx.fillText(wrd, w / 2, startY + i * lineH);
+        });
+      } else {
+        let size = h * 0.62;
+        ctx.font = `900 ${size}px ${family}`;
+        if ("letterSpacing" in ctx) {
+          (ctx as CanvasRenderingContext2D & { letterSpacing: string }).letterSpacing = "-0.04em";
+        }
+        const measured = ctx.measureText(text).width;
+        size = Math.min(size, (size * (w * 0.94)) / Math.max(1, measured));
+        ctx.font = `900 ${size}px ${family}`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "#000";
+        ctx.fillText(text, w / 2, h / 2 + size * 0.02);
       }
-      const measured = ctx.measureText(text).width;
-      size = Math.min(size, (size * (w * 0.94)) / Math.max(1, measured));
-      ctx.font = `900 ${size}px ${family}`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillStyle = "#000";
-      ctx.fillText(text, w / 2, h / 2 + size * 0.02);
+
       const url = m.toDataURL("image/png");
       canvas.style.maskImage = `url(${url})`;
       canvas.style.maskSize = "100% 100%";

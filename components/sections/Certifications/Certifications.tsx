@@ -314,7 +314,7 @@ export default function Certifications() {
 
       <div className={styles.foot}>
         <span className={styles.brandFoot}>
-          <b>06</b> Gireesh
+          <b>06</b> Krystor Agency
         </span>
         <span className={styles.count}>
           01 / {String(PANELS.length).padStart(2, "0")}

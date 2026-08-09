@@ -46,16 +46,16 @@
 .h2 {
   margin-top: 12px;
   font-weight: 900;
-  font-size: clamp(38px, 6vw, 84px);
+  font-size: clamp(44px, 7vw, 96px);
   letter-spacing: -0.04em;
   line-height: 0.94;
   text-transform: uppercase;
   color: #141414;
 }
 .lede {
-  margin: 14px auto 0;
-  max-width: 620px;
-  font-size: clamp(13.5px, 1.15vw, 16px);
+  margin: 16px auto 0;
+  max-width: 720px;
+  font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.55;
   color: #5c5c63;
   text-wrap: pretty;
@@ -69,19 +69,16 @@
   }
   .h2 {
     margin-top: 8px;
-    font-size: clamp(30px, 4.6vh, 52px);
+    font-size: clamp(34px, 5vh, 60px);
   }
   .lede {
     margin-top: 9px;
-    font-size: 13px;
-    max-width: 520px;
+    font-size: 14px;
+    max-width: 580px;
   }
-  /* the heading now costs less, so the panel reclaims that height.
-     `.deckMode` prefix keeps this ahead of the base .stage rule below. */
   .deckMode .stage {
-    --panel-w: clamp(340px, min(58vw, calc((100vh - 270px) * 1.6)), 980px);
+    --panel-w: clamp(380px, min(64vw, calc((100vh - 250px) * 1.6)), 1100px);
   }
-  /* and the panel's own rhythm tightens so the record still fits */
   .band {
     height: 40px;
   }
@@ -98,10 +95,10 @@
 }
 @media (max-height: 680px) {
   .lede {
-    display: none; /* the heading alone still names the section */
+    display: none;
   }
   .deckMode .stage {
-    --panel-w: clamp(340px, min(58vw, calc((100vh - 215px) * 1.6)), 980px);
+    --panel-w: clamp(380px, min(64vw, calc((100vh - 200px) * 1.6)), 1100px);
   }
 }
 
@@ -119,12 +116,10 @@
 }
 .stage {
   position: relative;
-  /* the stage IS the focused panel; the others recede behind its centre */
-  --panel-w: clamp(340px, min(58vw, calc((100vh - 430px) * 1.6)), 980px);
+  --panel-w: clamp(380px, min(68vw, calc((100vh - 380px) * 1.6)), 1160px);
   width: var(--panel-w);
   height: calc(var(--panel-w) * 0.625);
   transform-style: preserve-3d;
-  /* square to the viewer — no stage tilt, no warped perspective */
   will-change: transform;
 }
 

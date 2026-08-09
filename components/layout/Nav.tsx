@@ -96,7 +96,7 @@ export default function Nav() {
     <header className={styles.wrap} ref={ref}>
       <div className={styles.cap}>
         <a href="#home" className={styles.logo} aria-label={t("nav.home")}>
-          GIREESH<i>.</i>
+          KRYSTOR AGENCY<i>.</i>
         </a>
 
         <nav className={styles.links} aria-label="Primary">

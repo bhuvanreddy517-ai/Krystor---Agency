@@ -10,8 +10,8 @@
   --ph: #f2f2f3;
   --shadow: 0 24px 60px -12px rgba(20, 20, 20, 0.1), 0 4px 16px rgba(20, 20, 20, 0.05);
   --shadow-lg: 0 48px 110px -20px rgba(20, 20, 20, 0.18), 0 8px 28px rgba(20, 20, 20, 0.07);
-  --radius: 22px;
-  --max: 1280px;
+  --radius: 26px;
+  --max: 1480px;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast: 200ms;
@@ -28,11 +28,9 @@ html {
   scroll-behavior: auto; /* Lenis owns scrolling */
 }
 
-/* fixed header must never cover the top of a section — this covers native
-   anchor jumps, scrollIntoView and reduced-motion; lib/lenis.ts applies the
-   same offset to the smooth-scrolled path */
+/* fixed header offset */
 :root {
-  --nav-offset: 104px;
+  --nav-offset: 148px;
 }
 section[id],
 [id] {
@@ -62,12 +60,9 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-ui), -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  /* `clip` rather than `hidden`: both block horizontal scroll, but `hidden`
-     makes body a scroll container and silently disables position:sticky
-     anywhere on the page. Keeping `clip` leaves that door open. */
   overflow-x: clip;
 }
 

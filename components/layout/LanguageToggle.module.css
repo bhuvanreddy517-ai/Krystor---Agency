@@ -24,9 +24,9 @@
 }
 
 .opt {
-  min-width: 34px;
-  padding: 5px 9px;
-  font-size: 11px;
+  min-width: 44px;
+  padding: 8px 14px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.06em;
   color: var(--ink-3);

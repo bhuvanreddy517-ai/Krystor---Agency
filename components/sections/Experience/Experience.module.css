@@ -68,10 +68,10 @@
 }
 .h2 {
   font-weight: 900;
-  font-size: clamp(24px, 2.7vw, 34px);
-  letter-spacing: -0.03em;
-  line-height: 1.06;
-  max-width: 520px;
+  font-size: clamp(38px, 4.8vw, 68px);
+  letter-spacing: -0.035em;
+  line-height: 1.0;
+  max-width: 680px;
 }
 .serif {
   font-family: var(--font-serif), Georgia, serif;
@@ -94,15 +94,8 @@
 }
 .stage {
   position: relative;
-  /* perspective magnifies the front board slightly, so the authored width is
-     set a little under the 65–80vw target to land inside it when rendered */
-  width: min(76vw, 1180px);
-  /* the active panel is a large content card; the waiting stack fills the
-     extra headroom above it */
-  /* 56vh on a normal desktop; on short viewports it yields to the space the
-     header, the receding stack and the foot actually need, so the whole
-     composition always fits without clipping */
-  --panel-h: clamp(280px, min(56vh, calc(100vh - 370px)), 620px);
+  width: min(84vw, 1340px);
+  --panel-h: clamp(340px, min(62vh, calc(100vh - 350px)), 720px);
   height: calc(var(--panel-h) + 150px);
   transform-style: preserve-3d;
   transform: rotateX(6deg);

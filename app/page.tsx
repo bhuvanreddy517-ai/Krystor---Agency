@@ -8,7 +8,6 @@ import DesignStack from "@/components/sections/Stack/DesignStack";
 import Work from "@/components/sections/Work/Work";
 import Experience from "@/components/sections/Experience/Experience";
 import Certifications from "@/components/sections/Certifications/Certifications";
-import Gallery from "@/components/sections/Gallery/Gallery";
 import Connect from "@/components/sections/Connect/Connect";
 
 /*
@@ -70,11 +69,7 @@ export default function Home() {
           <Certifications />
         </Scene>
 
-        <Scene order={9} runway={1.6} id="gallery" keepOnMobile>
-          <Gallery />
-        </Scene>
-
-        {/* the closing frame rises over the gallery, then flows to the footer */}
+        {/* the closing frame rises over credentials, then flows to the footer */}
         <div className="finalFrame">
           <Connect />
         </div>

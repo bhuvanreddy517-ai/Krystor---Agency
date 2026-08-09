@@ -222,7 +222,7 @@ export default function Hero() {
           <Image
             className={styles.portrait}
             src="/images/portrait.png"
-            alt="Gireesh Kumar Reddy — Product Designer"
+            alt="Krystor Agency — Product Design Agency"
             width={554}
             height={573}
             priority

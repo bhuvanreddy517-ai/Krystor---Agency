@@ -2,54 +2,49 @@
 
 .wrap {
   position: fixed;
-  top: 16px;
+  top: 24px;
   left: 0;
   right: 0;
   z-index: 90;
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 32px;
   pointer-events: none;
   transition: opacity 0.5s ease, transform 0.7s var(--ease-out-expo);
 }
-
-/* CORRECTION 01 — the header is now present from the very first viewport,
-   including over the opening tunnel. It is never hidden or duplicated. */
 
 .cap {
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 30px;
-  width: min(860px, 100%);
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--line);
+  gap: 44px;
+  width: min(1380px, 96vw);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 2px solid var(--line);
   border-radius: 999px;
-  padding: 10px 10px 10px 24px;
-  box-shadow: 0 10px 34px -10px rgba(20, 20, 20, 0.08);
+  padding: 22px 24px 22px 48px;
+  box-shadow: 0 20px 60px -10px rgba(20, 20, 20, 0.15);
   transition: box-shadow 0.35s ease, padding 0.35s ease, background 0.35s ease;
 }
 .scrolled .cap {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 16px 44px -12px rgba(20, 20, 20, 0.14);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px -12px rgba(20, 20, 20, 0.2);
 }
 
 .logo {
   font-weight: 900;
-  font-size: 18px;
-  letter-spacing: -0.02em;
+  font-size: 20px;
+  letter-spacing: -0.035em;
   margin-right: auto;
   transition: letter-spacing 0.35s cubic-bezier(0.33, 1, 0.68, 1);
 }
 .logo:hover {
   letter-spacing: 0.01em;
 }
-/* the red period is the brand mark — it does the PillNav logo-spin's job:
-   a small, springy acknowledgement on hover */
 .logo i {
   font-style: normal;
   color: var(--accent);
@@ -63,15 +58,14 @@
 /* --- links with roll-over micro-interaction --- */
 .links {
   display: flex;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
+  gap: 14px;
+  font-size: 20px;
+  font-weight: 800;
   color: var(--ink-2);
 }
-/* pill links — same interaction standard as Button: circle fill + label roll */
 .links a {
   position: relative;
-  padding: 7px 15px;
+  padding: 14px 28px;
   border-radius: 999px;
   overflow: hidden;
   isolation: isolate;
@@ -82,8 +76,6 @@
   position: absolute;
   left: 50%;
   top: 100%;
-  /* geometry and timing matched to the Connect social buttons, so the
-     header speaks exactly the same interaction language */
   width: 240%;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -96,11 +88,9 @@
 .links a:focus-visible::before {
   transform: translate(-50%, -50%) scale(1);
 }
-/* the current section stays a quiet weight change — the black fill is
-   reserved for hover/touch, as requested */
 .links a.on {
   color: var(--ink);
-  font-weight: 700;
+  font-weight: 900;
 }
 .roll {
   display: inline-block;
@@ -119,8 +109,6 @@
 .roll span:last-child {
   color: #fff;
 }
-/* Touch devices never fire :hover, so the fill is driven by the tap itself
-   instead of being switched off — same animation, same timing. */
 @media (hover: none) {
   .links a:active::before {
     transform: translate(-50%, -50%) scale(1);
@@ -134,7 +122,7 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 24px;
 }
 /* ============ MOBILE NAVIGATION ============
    The pill can't carry four links plus the toggle at phone widths, so below
