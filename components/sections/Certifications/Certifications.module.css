@@ -46,16 +46,29 @@
 .h2 {
   margin-top: 14px;
   font-weight: 900;
-  font-size: clamp(72px, 10vw, 140px);
+  font-size: clamp(68px, 8.8vw, 120px);
   letter-spacing: -0.04em;
   line-height: 0.94;
   text-transform: uppercase;
-  color: #141414;
+  background: linear-gradient(135deg, #141414 0%, #4a4a52 40%, var(--accent) 75%, #141414 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineCredentialsText 6s ease-in-out infinite alternate;
+}
+
+@keyframes shineCredentialsText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 .lede {
-  margin: 18px auto 0;
-  max-width: 1040px;
-  font-size: clamp(24px, 2.2vw, 30px);
+  margin: 16px auto 0;
+  max-width: 960px;
+  font-size: clamp(22px, 2.2vw, 28px);
   line-height: 1.55;
   color: #5c5c63;
   text-wrap: pretty;
@@ -116,7 +129,7 @@
 }
 .stage {
   position: relative;
-  --panel-w: clamp(540px, min(82vw, calc((100vh - 310px) * 1.6)), 1680px);
+  --panel-w: clamp(500px, min(78vw, calc((100vh - 270px) * 1.6)), 1360px);
   width: var(--panel-w);
   height: calc(var(--panel-w) * 0.625);
   transform-style: preserve-3d;
@@ -129,7 +142,7 @@
   inset: 0;
   border-radius: 12px;
   backface-visibility: hidden;
-  padding: 0 clamp(30px, 3.4vw, 52px) clamp(26px, 3vh, 40px);
+  padding: 0 clamp(28px, 3.2vw, 46px) clamp(24px, 2.8vh, 36px);
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -156,11 +169,11 @@
 /* ---------- identity band: stays in the exposed upper area ---------- */
 .band {
   flex: 0 0 auto;
-  height: 56px;
+  height: 52px;
   display: flex;
   align-items: center;
-  gap: 18px;
-  font-size: 15px;
+  gap: 16px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -179,26 +192,26 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: clamp(12px, 1.8vh, 22px);
+  margin-bottom: clamp(10px, 1.6vh, 18px);
 }
 .logoPlate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: clamp(42px, 6vh, 58px);
-  padding: 0 16px;
-  border-radius: 10px;
+  height: clamp(38px, 5vh, 52px);
+  padding: 0 14px;
+  border-radius: 9px;
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(20, 20, 20, 0.14);
 }
 .logoPlate img {
-  height: clamp(22px, 3vh, 32px);
+  height: clamp(20px, 2.8vh, 28px);
   width: auto;
   display: block;
   object-fit: contain;
 }
 .issuerName {
-  font-size: clamp(22px, 2.8vw, 36px);
+  font-size: clamp(20px, 2.4vw, 30px);
   font-weight: 800;
   letter-spacing: -0.005em;
   text-transform: uppercase;
@@ -230,31 +243,31 @@
 .record {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, auto));
-  gap: 0 clamp(18px, 2.6vw, 40px);
-  margin-bottom: 16px;
-  padding-bottom: 14px;
+  gap: 0 clamp(16px, 2.2vw, 34px);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid currentColor;
   border-color: color-mix(in srgb, currentColor 16%, transparent);
 }
 .record dt {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.45;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 .record dd {
   font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   opacity: 0.92;
   white-space: nowrap;
 }
 .verifyLink {
   display: inline-block;
-  margin-top: 12px;
-  font-size: 15px;
+  margin-top: 10px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.08em;
   border-bottom: 1.5px solid currentColor;
@@ -263,10 +276,10 @@
 
 /* the certification's own name */
 .title {
-  font-size: clamp(34px, 4.8vw, 68px);
+  font-size: clamp(30px, 4vw, 54px);
   font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.02;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
   text-transform: uppercase;
 }
 

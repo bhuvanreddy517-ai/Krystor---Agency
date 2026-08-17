@@ -94,9 +94,9 @@
 }
 .stage {
   position: relative;
-  width: min(94vw, 1850px);
-  --panel-h: clamp(440px, min(72vh, calc(100vh - 310px)), 840px);
-  height: calc(var(--panel-h) + 150px);
+  width: min(90vw, 1320px);
+  --panel-h: clamp(340px, min(56vh, calc(100vh - 280px)), 520px);
+  height: calc(var(--panel-h) + 130px);
   transform-style: preserve-3d;
   transform: rotateX(6deg);
   will-change: transform;
@@ -111,13 +111,13 @@
   height: var(--panel-h);
   display: flex;
   flex-direction: column;
-  padding: 0 clamp(34px, 3.8vw, 60px) clamp(28px, 3.4vh, 46px);
-  border-radius: 8px;
+  padding: 0 clamp(28px, 3.2vw, 48px) clamp(20px, 2.6vh, 36px);
+  border-radius: 12px;
   color: #fff;
   cursor: pointer;
   will-change: transform, opacity;
   transform-style: preserve-3d;
-  box-shadow: 0 30px 64px -26px rgba(20, 20, 20, 0.34);
+  box-shadow: 0 24px 56px -22px rgba(20, 20, 20, 0.34);
 }
 .dark {
   color: var(--ink);
@@ -240,25 +240,25 @@
 }
 
 .tile {
-  width: clamp(100px, 10.5vw, 150px);
+  width: clamp(76px, 7.5vw, 110px);
   aspect-ratio: 1;
   background: #fff;
 }
 
 .plate {
-  height: clamp(74px, 8vh, 104px);
-  width: calc(clamp(74px, 8vh, 104px) * var(--logo-aspect, 3));
-  max-width: min(340px, 28vw);
+  height: clamp(58px, 6vh, 82px);
+  width: calc(clamp(58px, 6vh, 82px) * var(--logo-aspect, 3));
+  max-width: min(260px, 25vw);
   background: #fff;
-  padding: 0 clamp(14px, 1.6vw, 24px);
-  border-radius: 16px;
+  padding: 0 clamp(12px, 1.4vw, 20px);
+  border-radius: 14px;
 }
 .plate img {
   object-fit: contain;
 }
 
 .mono {
-  width: clamp(100px, 10.5vw, 150px);
+  width: clamp(76px, 7.5vw, 110px);
   aspect-ratio: 1;
   background: rgba(255, 255, 255, 0.14);
   box-shadow: none;
@@ -267,26 +267,26 @@
   background: rgba(20, 20, 20, 0.08);
 }
 .mono b {
-  font-size: clamp(18px, 1.8vw, 24px);
+  font-size: clamp(16px, 1.6vw, 21px);
   font-weight: 900;
   letter-spacing: -0.02em;
   text-align: center;
-  padding: 0 10px;
+  padding: 0 8px;
   line-height: 1.1;
 }
 
 .role {
-  font-size: clamp(40px, 4.8vw, 68px);
+  font-size: clamp(30px, 3.8vw, 50px);
   font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.02;
+  letter-spacing: -0.028em;
+  line-height: 1.04;
   max-width: 22ch;
 }
 .loc {
-  margin-top: 12px;
-  font-size: 15px;
+  margin-top: 8px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   opacity: 0.72;
 }
@@ -294,10 +294,10 @@
 /* two-column body — spacious, editorial */
 .body {
   margin-top: auto;
-  padding-top: clamp(20px, 3vh, 34px);
+  padding-top: clamp(16px, 2.4vh, 26px);
   display: grid;
   grid-template-columns: 1.35fr 1fr;
-  gap: clamp(28px, 3.4vw, 64px);
+  gap: clamp(22px, 2.8vw, 44px);
   align-items: start;
   border-top: 1px solid rgba(255, 255, 255, 0.26);
   min-height: 0;
@@ -306,25 +306,25 @@
   border-top-color: rgba(20, 20, 20, 0.14);
 }
 .lbl {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.62;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .lblGap {
-  margin-top: clamp(16px, 2.2vh, 26px);
+  margin-top: clamp(12px, 1.8vh, 22px);
 }
 .summary {
-  font-size: clamp(20px, 1.6vw, 25px);
+  font-size: clamp(16px, 1.35vw, 20px);
   line-height: 1.55;
   opacity: 0.96;
 }
 .list {
-  margin: 14px 0 0 18px;
-  font-size: clamp(17px, 1.3vw, 20px);
-  line-height: 1.5;
+  margin: 10px 0 0 16px;
+  font-size: clamp(14px, 1.15vw, 17px);
+  line-height: 1.48;
   opacity: 0.86;
 }
 .list li {

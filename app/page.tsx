@@ -41,11 +41,11 @@ export default function Home() {
           <TunnelIntro />
         </Scene>
 
-        <Scene order={2} id="hero">
+        <Scene order={2} id="hero" keepOnMobile>
           <Hero />
         </Scene>
 
-        <Scene order={3} id="about">
+        <Scene order={3} id="about" keepOnMobile>
           <About />
         </Scene>
 

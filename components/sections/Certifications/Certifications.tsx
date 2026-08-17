@@ -172,6 +172,17 @@ export default function Certifications() {
       /* No pointer-driven rotation: credential panels stay square to the
          viewer. Depth comes only from Z, scale and opacity. */
 
+      /* Header text entrance reveal animation */
+      gsap.from([`.${styles.eyebrow}`, `.${styles.h2}`, `.${styles.lede}`], {
+        y: 28,
+        autoAlpha: 0,
+        duration: 1.0,
+        ease: EASE.outExpo,
+        stagger: 0.1,
+        immediateRender: false,
+        scrollTrigger: { trigger: el, start: "top 80%" },
+      });
+
       gsap.from(`.${styles.foot} > *`, {
         y: 18,
         autoAlpha: 0,

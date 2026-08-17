@@ -14,7 +14,7 @@ import { PROJECTS } from "@/content/projects";
 import styles from "./Work.module.css";
 import { useLang, L } from "@/lib/i18n";
 
-const SPREAD = 330; /* px between card centers on the arc */
+const SPREAD = 260; /* px between card centers on the arc */
 /* Scroll px per card. With 14 projects this is the page's longest pin, so
    the step is kept tight — enough for each card to land at centre, without
    turning the section into a corridor. */

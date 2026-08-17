@@ -137,7 +137,6 @@ export default function Nav() {
       <div
         className={`${styles.sheet} ${menuOpen ? styles.sheetOpen : ""}`}
         id="mobile-nav"
-        hidden={!menuOpen}
       >
         <nav aria-label="Primary mobile">
           {LINKS.map((l) => (

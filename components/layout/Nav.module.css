@@ -19,22 +19,23 @@
   align-items: center;
   gap: 36px;
   width: min(1200px, 94vw);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1.5px solid var(--line);
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
   border-radius: 999px;
   padding: 14px 28px 14px 36px;
-  box-shadow: 0 16px 50px -10px rgba(20, 20, 20, 0.15);
-  transition: box-shadow 0.35s ease, padding 0.35s ease, background 0.35s ease, transform 0.35s ease;
+  box-shadow: 0 18px 50px -10px rgba(0, 0, 0, 0.14), inset 0 1px 2px 0 rgba(255, 255, 255, 0.85), inset 0 -1px 1px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.35s ease, padding 0.35s ease, background 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
   transform: scale(1);
   transform-origin: top center;
 }
 .scrolled .cap {
   padding-top: 10px;
   padding-bottom: 10px;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 20px 60px -12px rgba(20, 20, 20, 0.2);
+  background: rgba(255, 255, 255, 0.68);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.18), inset 0 1px 2px 0 rgba(255, 255, 255, 0.95);
   transform: scale(0.96);
 }
 
@@ -166,24 +167,28 @@
 .sheet {
   pointer-events: auto;
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% + 10px);
   left: 20px;
   right: 20px;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  box-shadow: 0 24px 60px -18px rgba(20, 20, 20, 0.22);
-  padding: 12px;
+  z-index: 95;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.2), inset 0 1px 2px 0 rgba(255, 255, 255, 0.9);
+  padding: 10px;
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transform: translateY(-10px) scale(0.985);
   transform-origin: 50% 0;
-  transition: opacity 0.32s ease, transform 0.42s var(--ease-out-expo);
+  transition: opacity 0.32s ease, transform 0.42s var(--ease-out-expo), visibility 0.32s;
 }
 .sheetOpen {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   transform: translateY(0) scale(1);
 }
 .sheet nav {
@@ -193,12 +198,12 @@
 .sheet a {
   display: flex;
   align-items: center;
-  min-height: 64px;
-  padding: 0 24px;
-  border-radius: 16px;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--ink-2);
+  min-height: 54px;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
   transition: background 0.25s ease, color 0.25s ease;
 }
 .sheet a:active {
@@ -206,8 +211,8 @@
   color: #fff;
 }
 .sheetOn {
-  color: var(--ink);
-  background: rgba(20, 20, 20, 0.05);
+  color: var(--accent) !important;
+  background: rgba(20, 20, 20, 0.06);
 }
 
 /* tap-anywhere-to-close, behind the drawer */
@@ -215,12 +220,15 @@
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 1;
-  background: rgba(20, 20, 20, 0.28);
+  z-index: 85;
+  background: rgba(20, 20, 20, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
   cursor: default;
+  border: none;
 }
 .scrimOn {
   opacity: 1;
@@ -232,32 +240,33 @@
     display: none;
   }
   .wrap {
-    top: 20px;
-    padding: 0 16px;
+    top: 14px;
+    padding: 0 12px;
   }
   .cap {
     width: 100%;
-    gap: 16px;
-    padding: 16px 20px 16px 28px;
-    border-width: 2.5px;
-    transform: scale(1.12);
-    transform-origin: top center;
+    gap: 12px;
+    padding: 10px 16px 10px 20px;
+    border-width: 1.5px;
+    transform: none !important;
   }
   .logo {
-    font-size: 24px;
+    font-size: 18px;
   }
   .right {
-    gap: 16px;
+    gap: 12px;
   }
   .burger {
     display: block;
+    width: 44px;
+    height: 44px;
   }
   .scrim {
     display: block;
   }
   .sheet {
-    left: 16px;
-    right: 16px;
+    left: 12px;
+    right: 12px;
   }
 }
 

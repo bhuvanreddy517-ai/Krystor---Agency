@@ -24,15 +24,16 @@ export default function Connect() {
     if (!el || prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
-      /* reveal */
-      gsap.from(`.${styles.head} > *`, {
-        y: 36,
+      /* text & CTA entrance reveal */
+      gsap.from([`.${styles.eyebrow}`, `.${styles.h2}`, `.${styles.lede}`, `.${styles.cta}`], {
+        y: 44,
+        scale: 0.96,
         autoAlpha: 0,
-        duration: 0.9,
+        duration: 1.1,
         ease: EASE.outExpo,
-        stagger: 0.09,
+        stagger: 0.12,
         immediateRender: false,
-        scrollTrigger: { trigger: el, start: "top 70%" },
+        scrollTrigger: { trigger: el, start: "top 75%" },
       });
     }, el);
 
@@ -56,14 +57,6 @@ export default function Connect() {
           <Button href="/contact" variant="primary" arrow>
             {t("connect.cta")}
           </Button>
-          <a
-            href="https://wa.me/918217527309"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.waBtn}
-          >
-            💬 Chat on WhatsApp (+91 8217527309) ↗
-          </a>
         </div>
       </div>
 

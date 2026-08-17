@@ -57,7 +57,6 @@ html {
 }
 
 body {
-  zoom: 0.85;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-ui), -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;

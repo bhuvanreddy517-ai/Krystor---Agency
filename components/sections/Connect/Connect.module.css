@@ -35,12 +35,15 @@
   font-size: clamp(76px, 12vw, 168px);
   letter-spacing: -0.04em;
   line-height: 0.96;
+  color: #141414;
 }
 .serif {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
   font-weight: 400;
   color: var(--accent);
+  display: inline-block;
+  -webkit-text-fill-color: var(--accent);
 }
 .lede {
   margin: 24px auto 0;

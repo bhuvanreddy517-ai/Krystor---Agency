@@ -6,10 +6,11 @@
 .hero {
   position: relative;
   background: #fff; /* opaque, so the layer above covers it cleanly */
-  height: auto;
+  height: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   padding-top: 96px;
 }

@@ -71,6 +71,111 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
+  /* ─────────────── 0 · AURA STUDIO (3D Interior) ─────────────── */
+  {
+    slug: "aura-studio-3d-interior",
+    title: "Aura Studio — 3D Spatial Interior Architecture",
+    tags: ["3D WebGL", "Interior Architecture", "Spatial UX", "Interactive Web"],
+    year: "2026",
+    oneLiner:
+      "Bespoke luxury interior architecture experience featuring interactive 3D spatial tours, real-time before & after rendering, and high-end spatial visualization.",
+    contribution:
+      "3D spatial web architecture, real-time lighting interaction, and high-end luxury UI design system.",
+    coverLabel: "AURA STUDIO 3D SPATIAL INTERIOR",
+    cover: {
+      bg: "#121316",
+      ink: "light",
+      src: "/images/projects/aura-interior-cover.jpg",
+      variant: "photo",
+      focus: "center"
+    },
+    site: { url: "https://interior-3d-web.vercel.app/#", label: "interior-3d-web.vercel.app" },
+    fr: {
+      title: "Aura Studio — Architecture d'Intérieur 3D Spatial",
+      oneLiner:
+        "Expérience d'architecture d'intérieur haut de gamme comprenant des visites 3D interactives, un rendu avant/après en temps réel et une visualisation spatiale.",
+      contribution:
+        "Architecture web 3D, interactions lumineuses en temps réel et design system de luxe.",
+      tags: ["WebGL 3D", "Architecture d'Intérieur", "UX Spatiale", "Web Interactif"],
+      study: {
+        role: "Lead 3D Web & Spatial UX Designer",
+        timeline: "2026 · Live Production",
+        context:
+          "Studio d'architecture d'intérieur haut de gamme basé à Londres & Paris, spécialisé dans la planification spatiale résidentielle et les rénovations clés en main avec visites interactives en 3D.",
+        problem:
+          "Traduire l'élégance tactile et les proportions de l'architecture d'intérieur physique dans une expérience web 3D en temps réel fluide et immersive.",
+        process: [
+          {
+            title: "Modélisation et optimisation spatiale WebGL",
+            body: "Développement d'environnements 3D haute fidélité optimisés pour une navigation fluide à 60 FPS sur desktop et mobile.",
+          },
+          {
+            title: "Interface de comparaison Avant / Après interactif",
+            body: "Conception d'un curseur de comparaison spatiale permettant d'explorer instantanément la transformation architecturale.",
+          },
+          {
+            title: "Parcours client et prise de rendez-vous de luxe",
+            body: "Intégration d'un tunnel de conversion élégant guidant les visiteurs de la découverte 3D à la réservation de consultation.",
+          },
+        ],
+        decisions: [
+          {
+            title: "Rendu temps réel sans temps de chargement lourd",
+            why: "Mise en place d'un chargement progressif des actifs 3D et d'éclairages pré-calculés pour garantir une réactivité immédiate.",
+          },
+          {
+            title: "Navigation fluide et responsive",
+            why: "Adaptation des commandes 3D tactiles pour appareils mobiles et contrôle à la souris fluide sur desktop.",
+          },
+        ],
+        outcomes: [
+          "Expérience WebGL 3D immersive déployée sur Vercel",
+          "Visite spatiale 3D interactive et module de comparaison intégrés",
+        ],
+        reflection:
+          "La 3D web transforme la présentation architecturale d'une simple galerie photo statique en un espace vivant où le client se projette instantanément.",
+      },
+    },
+    study: {
+      role: "Lead 3D Web & Spatial UX Designer",
+      timeline: "2026 · Live Production",
+      context:
+        "Luxury interior design studio based in London & Paris, specializing in high-end residential interior architecture, spatial planning, and turnkey renovations powered by interactive 3D spatial web tours.",
+      problem:
+        "Translating tactile elegance and architectural spatial proportions into a real-time 3D web experience with zero friction or heavy load times.",
+      process: [
+        {
+          title: "WebGL 3D Scene Architecture",
+          body: "Building interactive high-fidelity interior environments optimized for smooth 60fps rendering across desktop and mobile browsers.",
+        },
+        {
+          title: "Interactive Before & After Spatial Slider",
+          body: "Designing a real-time comparison interface allowing users to inspect architectural transformations instantaneously.",
+        },
+        {
+          title: "High-End Luxury Booking Funnel",
+          body: "Crafting a seamless conversion journey from immersive 3D spatial exploration to high-ticket consultation booking.",
+        },
+      ],
+      decisions: [
+        {
+          title: "Instant visual feedback over heavy asset loading",
+          why: "Utilized progressive asset loading and baked lighting maps to guarantee instant interactivity without jarring loader screens.",
+        },
+        {
+          title: "Unified touch & mouse camera controls",
+          why: "Adapted spatial navigation for fluid gesture controls on mobile devices and smooth orbit panning on desktop.",
+        },
+      ],
+      outcomes: [
+        "Live 3D WebGL experience deployed and accessible on Vercel",
+        "Interactive before/after spatial transformation tool & 3D tour functionality",
+      ],
+      reflection:
+        "Web 3D elevates architectural storytelling from static photo grids into an interactive space where clients physically feel the scale and lighting.",
+    },
+  },
+
   /* ─────────────── 1 · HEEDING (kept) ─────────────── */
   {
     slug: "heeding-marketplace",
