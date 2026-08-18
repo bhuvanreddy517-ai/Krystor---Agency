@@ -14,11 +14,10 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     let raf: ((time: number) => void) | null = null;
 
     if (!prefersReducedMotion()) {
-      const isTouch = window.matchMedia("(pointer: coarse), (max-width: 850px)").matches;
       lenis = new Lenis({
-        lerp: isTouch ? 0.14 : 0.1,
-        wheelMultiplier: 1,
-        touchMultiplier: 1.2,
+        lerp: 0.08,
+        wheelMultiplier: 0.95,
+        touchMultiplier: 1.1,
       });
       lenis.on("scroll", ScrollTrigger.update);
       raf = (time: number) => lenis!.raf(time * 1000);

@@ -109,7 +109,7 @@ export default function Experience() {
 
       let target = 0;
       let current = 0;
-      const speedFactor = isMobile ? 18 : 9;
+      const speedFactor = 10;
       const tick = (_t: number, dt: number) => {
         const f = Math.min(dt / 1000, 0.05);
         current += (target - current) * Math.min(f * speedFactor, 1);
@@ -120,7 +120,7 @@ export default function Experience() {
 
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
-        scrub: isMobile ? 0.2 : 0.5,
+        scrub: 0.5,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           target = self.progress * (n - 1);

@@ -40,25 +40,29 @@ export default function Work() {
       const dots = gsap.utils.toArray<HTMLElement>(`.${styles.dot}`);
       const n = cards.length;
 
-      const getSpread = () => {
+      let spread = SPREAD;
+      let isMobile = false;
+
+      const updateDimensions = () => {
         const w = window.innerWidth;
-        if (w <= 500) return 175;
-        if (w <= 850) return 210;
-        return SPREAD;
+        isMobile = w <= 768;
+        if (w <= 500) spread = 170;
+        else if (w <= 850) return 205;
+        else spread = SPREAD;
       };
+      updateDimensions();
+      window.addEventListener("resize", updateDimensions);
 
       const render = (p: number) => {
-        const spread = getSpread();
-        const isMobile = window.innerWidth <= 768;
         cards.forEach((card, i) => {
           const d = i - p;
           const ad = Math.abs(d);
           gsap.set(card, {
             x: d * spread,
-            y: Math.min(ad * ad * (isMobile ? 6 : 9), isMobile ? 80 : 110),
-            rotationY: gsap.utils.clamp(-34, 34, -d * (isMobile ? 8 : 10)),
-            scale: 1 - Math.min(ad * (isMobile ? 0.08 : 0.065), 0.38),
-            autoAlpha: ad <= 2 ? 1 : Math.max(0.45, 1 - (ad - 2) * 0.22),
+            y: Math.min(ad * ad * (isMobile ? 6 : 9), isMobile ? 75 : 110),
+            rotationY: gsap.utils.clamp(-32, 32, -d * (isMobile ? 7.5 : 10)),
+            scale: 1 - Math.min(ad * (isMobile ? 0.075 : 0.065), 0.36),
+            autoAlpha: ad <= 2.2 ? 1 : Math.max(0.45, 1 - (ad - 2.2) * 0.25),
             zIndex: Math.round(100 - ad * 10),
           });
         });
@@ -71,10 +75,9 @@ export default function Work() {
 
       render(0);
 
-      const isTouch = window.matchMedia("(max-width: 850px), (pointer: coarse)").matches;
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
-        scrub: isTouch ? 0.2 : 0.65,
+        scrub: 0.65,
         invalidateOnRefresh: true,
         onUpdate: (self) => render(self.progress * (n - 1)),
       });
