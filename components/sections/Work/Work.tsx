@@ -71,9 +71,10 @@ export default function Work() {
 
       render(0);
 
+      const isTouch = window.matchMedia("(max-width: 850px), (pointer: coarse)").matches;
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
-        scrub: 0.65,
+        scrub: isTouch ? 0.2 : 0.65,
         invalidateOnRefresh: true,
         onUpdate: (self) => render(self.progress * (n - 1)),
       });

@@ -14,7 +14,12 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     let raf: ((time: number) => void) | null = null;
 
     if (!prefersReducedMotion()) {
-      lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1 });
+      const isTouch = window.matchMedia("(pointer: coarse), (max-width: 850px)").matches;
+      lenis = new Lenis({
+        lerp: isTouch ? 0.14 : 0.1,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.2,
+      });
       lenis.on("scroll", ScrollTrigger.update);
       raf = (time: number) => lenis!.raf(time * 1000);
       gsap.ticker.add(raf);

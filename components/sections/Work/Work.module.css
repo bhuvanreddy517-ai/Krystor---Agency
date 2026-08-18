@@ -349,6 +349,9 @@
     position: absolute;
     width: min(290px, 78vw);
     will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
   }
   .card:active {
     transform: scale(0.97);

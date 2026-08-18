@@ -135,9 +135,10 @@ export default function Certifications() {
 
       let target = 0;
       let current = 0;
+      const speedFactor = isMobile ? 18 : 9;
       const tick = (_t: number, dt: number) => {
         const f = Math.min(dt / 1000, 0.05);
-        current += (target - current) * Math.min(f * 9, 1);
+        current += (target - current) * Math.min(f * speedFactor, 1);
         place(current);
       };
       gsap.ticker.add(tick);
@@ -145,7 +146,7 @@ export default function Certifications() {
 
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
-        scrub: 0.5,
+        scrub: isMobile ? 0.2 : 0.5,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           target = self.progress * (n - 1);

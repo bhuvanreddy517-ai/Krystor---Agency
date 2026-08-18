@@ -92,7 +92,7 @@ export default function Experience() {
               `translate3d(${(k * rightVal).toFixed(1)}px, ${(-k * upVal).toFixed(1)}px, ${(-k * backVal).toFixed(1)}px)` +
               ` scale(${(1 - k * 0.028).toFixed(3)})`;
             b.style.opacity = String(Math.max(0, 1 - k * 0.16));
-            b.style.filter = k > 1.2 ? `blur(${Math.min(3, (k - 1.2) * 1.2).toFixed(2)}px)` : "";
+            b.style.filter = !isMobile && k > 1.2 ? `blur(${Math.min(3, (k - 1.2) * 1.2).toFixed(2)}px)` : "";
             b.style.zIndex = String(200 - Math.round(k * 10));
           } else {
             const t = Math.min(1, -d / 1.1);
@@ -100,7 +100,7 @@ export default function Experience() {
               `translate3d(${(-t * 30).toFixed(1)}px, ${(t * 180).toFixed(1)}px, ${(-t * 260).toFixed(1)}px)` +
               ` scale(${(1 - t * 0.06).toFixed(3)})`;
             b.style.opacity = String(Math.max(0, 1 - t * 1.35));
-            b.style.filter = t > 0.25 ? `blur(${((t - 0.25) * 5).toFixed(2)}px)` : "";
+            b.style.filter = !isMobile && t > 0.25 ? `blur(${((t - 0.25) * 5).toFixed(2)}px)` : "";
             b.style.zIndex = "210";
           }
         }
@@ -109,9 +109,10 @@ export default function Experience() {
 
       let target = 0;
       let current = 0;
+      const speedFactor = isMobile ? 18 : 9;
       const tick = (_t: number, dt: number) => {
         const f = Math.min(dt / 1000, 0.05);
-        current += (target - current) * Math.min(f * 9, 1);
+        current += (target - current) * Math.min(f * speedFactor, 1);
         place(current);
       };
       gsap.ticker.add(tick);
@@ -119,7 +120,7 @@ export default function Experience() {
 
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
-        scrub: 0.5,
+        scrub: isMobile ? 0.2 : 0.5,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           target = self.progress * (n - 1);
