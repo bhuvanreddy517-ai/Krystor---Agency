@@ -308,10 +308,10 @@
    1100px used to get the base `position: absolute` cards with no JS ever
    spreading them: all 14 stacked in one pile at the centre of the track, with
    only the topmost reachable. */
-@media (max-width: 1100px), (prefers-reduced-motion: reduce) {
+@media (max-width: 1100px) {
   .work {
-    min-height: 0;
-    padding: 60px 0 20px;
+    min-height: 100svh;
+    padding: 60px 0 0;
   }
   .header {
     padding: 0 24px;
@@ -330,49 +330,48 @@
     margin-top: 10px;
   }
   .stage {
-    perspective: none;
-    min-height: 0;
-    display: block;
-    margin-top: 28px;
+    perspective: 1200px;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .track {
-    position: static;
-    height: auto;
+    position: relative;
+    width: 100%;
+    height: 380px;
     display: flex;
-    justify-content: flex-start;
-    gap: 18px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 6px 24px 26px;
-    scrollbar-width: none;
-  }
-  .track::-webkit-scrollbar {
-    display: none;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
   }
   .card {
-    position: relative;
-    flex: 0 0 82vw;
-    max-width: 320px;
-    scroll-snap-align: center;
-    transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, opacity 0.35s ease;
+    position: absolute;
+    width: min(290px, 78vw);
+    will-change: transform, opacity;
   }
   .card:active {
     transform: scale(0.97);
   }
   .cover {
-    height: 240px;
+    height: 190px;
   }
   .foot {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    padding: 6px 24px 30px;
+    padding: 10px 24px 20px;
   }
-  /* The dots track the arc's active card, and the arc doesn't run here — the
-     snap row is scrolled by thumb. Left visible they sat frozen on card one
-     forever, so they go with the counter and the hint. */
-  .count,
-  .hint,
-  .dots {
-    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    perspective: none;
+  }
+  .track {
+    position: static;
+    display: flex;
+    overflow-x: auto;
+  }
+  .card {
+    position: static;
+    flex: 0 0 82vw;
   }
 }

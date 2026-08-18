@@ -34,27 +34,31 @@ export default function Work() {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1101px) and (prefers-reduced-motion: no-preference)", () => {
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
       const cards = gsap.utils.toArray<HTMLElement>(`.${styles.card}`);
       const counter = el.querySelector<HTMLElement>(`.${styles.count}`);
       const dots = gsap.utils.toArray<HTMLElement>(`.${styles.dot}`);
       const n = cards.length;
 
+      const getSpread = () => {
+        const w = window.innerWidth;
+        if (w <= 500) return 175;
+        if (w <= 850) return 210;
+        return SPREAD;
+      };
+
       const render = (p: number) => {
+        const spread = getSpread();
+        const isMobile = window.innerWidth <= 768;
         cards.forEach((card, i) => {
           const d = i - p;
           const ad = Math.abs(d);
           gsap.set(card, {
-            x: d * SPREAD,
-            y: Math.min(ad * ad * 9, 110),
-            rotationY: gsap.utils.clamp(-34, 34, -d * 10),
-            scale: 1 - Math.min(ad * 0.065, 0.38),
-            /* Depth is carried by position, scale and rotation — NOT by
-               dimming. The cards on screen (roughly ad <= 2) stay fully
-               opaque so every cover reads at its true brightness; only
-               cards already travelling off the viewport edge fade, and
-               only enough to soften the exit. */
-            autoAlpha: ad <= 2 ? 1 : Math.max(0.55, 1 - (ad - 2) * 0.22),
+            x: d * spread,
+            y: Math.min(ad * ad * (isMobile ? 6 : 9), isMobile ? 80 : 110),
+            rotationY: gsap.utils.clamp(-34, 34, -d * (isMobile ? 8 : 10)),
+            scale: 1 - Math.min(ad * (isMobile ? 0.08 : 0.065), 0.38),
+            autoAlpha: ad <= 2 ? 1 : Math.max(0.45, 1 - (ad - 2) * 0.22),
             zIndex: Math.round(100 - ad * 10),
           });
         });
@@ -67,8 +71,6 @@ export default function Work() {
 
       render(0);
 
-      /* the Scene's sticky hold does the pinning; this only reads progress
-         across the scene's runway (see lib/scene.ts) */
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
         scrub: 0.65,
@@ -76,7 +78,6 @@ export default function Work() {
         onUpdate: (self) => render(self.progress * (n - 1)),
       });
 
-      /* header reveal, once, on pin start */
       gsap.from(`.${styles.header} > *`, {
         y: 40,
         autoAlpha: 0,
@@ -88,23 +89,6 @@ export default function Work() {
       });
 
       return () => st.kill();
-    });
-
-    mm.add("(max-width: 1100px) and (prefers-reduced-motion: no-preference)", () => {
-      const cards = gsap.utils.toArray<HTMLElement>(`.${styles.card}`);
-      gsap.from(cards, {
-        y: 40,
-        scale: 0.94,
-        autoAlpha: 0,
-        duration: 0.85,
-        ease: EASE.outExpo,
-        stagger: 0.08,
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: el.querySelector(`.${styles.stage}`) || el,
-          start: "top 85%",
-        },
-      });
     });
 
     return () => mm.revert();

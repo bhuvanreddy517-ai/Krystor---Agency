@@ -73,13 +73,18 @@ export default function Certifications() {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1001px) and (prefers-reduced-motion: no-preference)", () => {
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
       const panels = gsap.utils.toArray<HTMLElement>(`.${styles.panel}`);
       const counter = el.querySelector<HTMLElement>(`.${styles.count}`);
       const n = panels.length;
       let active = -1;
 
       el.classList.add(styles.deckMode);
+
+      const isMobile = window.innerWidth <= 1000;
+      const enterX = isMobile ? 95 : ENTER_X;
+      const enterZ = isMobile ? -100 : ENTER_Z;
+      const backZ = isMobile ? -360 : BACK_Z;
 
       const setActive = (i: number) => {
         if (i === active) return;
@@ -91,7 +96,7 @@ export default function Certifications() {
       const place = (p: number) => {
         for (let i = 0; i < n; i++) {
           const el2 = panels[i];
-          const d = i - p; /* >0 still to come · 0 centred · <0 receding */
+          const d = i - p;
 
           if (d > CULL_IN || d < -CULL_BACK) {
             el2.style.visibility = "hidden";
@@ -105,36 +110,29 @@ export default function Certifications() {
           let sc = 1;
 
           if (d >= 0) {
-            /* RIGHT → CENTER */
             const t = Math.min(d, CULL_IN);
-            x = ENTER_X * t;
-            z = ENTER_Z * t;
+            x = enterX * t;
+            z = enterZ * t;
             sc = 1 - 0.05 * t;
-            op = 1 - Math.max(0, t - 0.5) / 0.62; /* fades up as it arrives */
+            op = 1 - Math.max(0, t - 0.5) / 0.62;
           } else {
-            /* CENTER → BACKGROUND: straight back, no lateral drift, and it
-               stays on screen as a depth layer instead of exiting */
             const t = Math.min(CULL_BACK, -d);
-            const e = 1 - Math.pow(1 - Math.min(t, 1), 2); /* ease the first step */
-            z = BACK_Z * (e + Math.max(0, t - 1) * 0.28);
+            const e = 1 - Math.pow(1 - Math.min(t, 1), 2);
+            z = backZ * (e + Math.max(0, t - 1) * 0.28);
             sc = 1 - BACK_SCALE * (e + Math.max(0, t - 1) * 0.12);
             op = Math.max(BACK_MIN_OP, 1 - e * 0.68 - Math.max(0, t - 1) * 0.06);
           }
 
-          /* panels are straight rectangles — no roll, no skew */
           el2.style.transform =
             `translate3d(${x.toFixed(2)}%, 0%, ${z.toFixed(1)}px)` +
             ` scale(${sc.toFixed(3)})`;
           el2.style.opacity = String(gsap.utils.clamp(0, 1, op));
           el2.style.filter = "";
-          /* the active credential is the hero: everything else, arriving or
-             receded, sits behind it */
           el2.style.zIndex = String(200 - Math.round(Math.abs(d) * 20));
         }
         setActive(Math.round(gsap.utils.clamp(0, n - 1, p)));
       };
 
-      /* scroll → target → interpolation → transforms */
       let target = 0;
       let current = 0;
       const tick = (_t: number, dt: number) => {
@@ -145,8 +143,6 @@ export default function Certifications() {
       gsap.ticker.add(tick);
       place(0);
 
-      /* The Scene's sticky hold already pins this section, so no `pin` here —
-         this trigger only reads progress across the scene's runway. */
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
         scrub: 0.5,
@@ -156,7 +152,6 @@ export default function Certifications() {
         },
       });
 
-      /* click a panel to travel to it */
       const handlers: Array<[HTMLElement, () => void]> = [];
       panels.forEach((pnl, i) => {
         const h = () => {
@@ -169,10 +164,6 @@ export default function Certifications() {
         handlers.push([pnl, h]);
       });
 
-      /* No pointer-driven rotation: credential panels stay square to the
-         viewer. Depth comes only from Z, scale and opacity. */
-
-      /* Header text entrance reveal animation */
       gsap.from([`.${styles.eyebrow}`, `.${styles.h2}`, `.${styles.lede}`], {
         y: 28,
         autoAlpha: 0,
@@ -199,20 +190,6 @@ export default function Certifications() {
         handlers.forEach(([e2, h]) => e2.removeEventListener("click", h));
         el.classList.remove(styles.deckMode);
       };
-    });
-
-    mm.add("(max-width: 1000px), (prefers-reduced-motion: reduce)", () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      gsap.utils.toArray<HTMLElement>(`.${styles.panel}`).forEach((p) => {
-        gsap.from(p, {
-          y: 40,
-          autoAlpha: 0,
-          duration: 0.85,
-          ease: EASE.outExpo,
-          immediateRender: false,
-          scrollTrigger: { trigger: p, start: "top 88%" },
-        });
-      });
     });
 
     return () => mm.revert();

@@ -421,7 +421,7 @@
 /* ============ responsive ============ */
 @media (max-width: 1000px) {
   .certs {
-    padding: 60px 0 30px;
+    padding: 60px 0 20px;
   }
   .head,
   .foot {
@@ -450,46 +450,20 @@
     gap: 10px;
   }
   .stageWrap {
-    display: block;
-    perspective: none;
-    margin-top: 24px;
+    perspective: 1500px;
+    perspective-origin: 50% 44%;
   }
   .stage {
-    position: static;
-    width: auto;
-    height: auto;
-    transform: none !important;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 0 24px;
-    --panel-w: 100%;
-  }
-  /* The band is one nowrap row (number · CERTIFICATION · status) that needs
-     ~360px. Inside a phone-width panel it was clipped, taking the
-     verification status off the right edge of every credential. Let it wrap
-     and give it room. */
-  .band {
-    height: auto;
-    min-height: 40px;
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    padding-top: 4px;
-  }
-  .status {
-    margin-left: 0;
+    position: relative;
+    --panel-w: clamp(290px, 88vw, 1100px);
+    width: var(--panel-w);
+    height: calc(var(--panel-w) * 0.65);
+    min-height: 320px;
   }
   .panel {
-    position: relative !important;
-    height: auto;
-    min-height: 260px;
-    visibility: visible !important;
-    filter: none !important;
-    padding: 0 24px 24px;
-    transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, opacity 0.35s ease;
-  }
-  .panel:active {
-    transform: translateY(-2px) scale(0.985);
+    position: absolute;
+    inset: 0;
+    padding: 0 20px 20px;
   }
   .detail {
     opacity: 1 !important;
@@ -512,5 +486,22 @@
   }
   .foot {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stageWrap {
+    display: block;
+    perspective: none;
+  }
+  .stage {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .panel {
+    position: static;
+    height: auto;
   }
 }

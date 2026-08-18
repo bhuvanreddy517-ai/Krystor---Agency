@@ -443,7 +443,7 @@
 /* below the deck breakpoint: honest vertical boards, all content readable */
 @media (max-width: 1000px) {
   .experience {
-    padding: 60px 0 30px;
+    padding: 60px 0 20px;
   }
   .header {
     padding: 0 24px;
@@ -457,36 +457,22 @@
     line-height: 1.05;
   }
   .stageWrap {
-    display: block;
-    perspective: none;
-    margin-top: 24px;
+    perspective: 1400px;
+    perspective-origin: 50% 46%;
   }
   .stage {
-    position: static;
-    width: auto;
-    height: auto;
-    transform: none !important;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 0 24px;
+    position: relative;
+    width: 92vw;
+    --panel-h: clamp(340px, 56vh, 480px);
+    height: calc(var(--panel-h) + 110px);
   }
   .board {
-    position: relative !important;
-    left: auto;
-    right: auto;
-    top: auto;
-    margin-top: 0;
-    height: auto;
-    gap: 14px;
-    padding: 24px 24px;
-    border-radius: 10px;
-    visibility: visible !important;
-    filter: none !important;
-    transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, opacity 0.35s ease;
-  }
-  .board:active {
-    transform: translateY(-2px) scale(0.985);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--panel-h);
+    padding: 0 20px 20px;
   }
   .strip {
     height: auto;
@@ -504,7 +490,6 @@
     gap: 20px;
     margin-top: 18px;
   }
-  /* mark moves above the copy so nothing is squeezed on narrow screens */
   .detailCol {
     grid-template-columns: 1fr;
     gap: 18px;
@@ -530,5 +515,22 @@
   }
   .foot {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stageWrap {
+    display: block;
+    perspective: none;
+  }
+  .stage {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .board {
+    position: static;
+    height: auto;
   }
 }

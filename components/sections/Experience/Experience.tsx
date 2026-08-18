@@ -51,7 +51,7 @@ export default function Experience() {
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1001px) and (prefers-reduced-motion: no-preference)", () => {
+    mm.add("(prefers-reduced-motion: no-preference)", () => {
       const boards = gsap.utils.toArray<HTMLElement>(`.${styles.board}`);
       const navItems = gsap.utils.toArray<HTMLElement>(`.${styles.navItem}`);
       const counter = el.querySelector<HTMLElement>(`.${styles.count}`);
@@ -60,6 +60,11 @@ export default function Experience() {
       let active = -1;
 
       el.classList.add(styles.deckMode);
+
+      const isMobile = window.innerWidth <= 1000;
+      const upVal = isMobile ? 54 : UP;
+      const rightVal = isMobile ? 14 : RIGHT;
+      const backVal = isMobile ? 65 : BACK;
 
       const setActive = (idx: number) => {
         if (idx === active) return;
@@ -72,7 +77,7 @@ export default function Experience() {
 
       const place = (p: number) => {
         for (let i = 0; i < n; i++) {
-          const d = i - p; /* >0 waiting · 0 active · <0 leaving */
+          const d = i - p;
           const b = boards[i];
 
           if (d > DEPTH + 0.6 || d < -1.1) {
@@ -82,19 +87,17 @@ export default function Experience() {
           b.style.visibility = "visible";
 
           if (d >= 0) {
-            /* waiting: up + right + back, progressively compressed */
             const k = Math.min(d, DEPTH);
             b.style.transform =
-              `translate3d(${(k * RIGHT).toFixed(1)}px, ${(-k * UP).toFixed(1)}px, ${(-k * BACK).toFixed(1)}px)` +
+              `translate3d(${(k * rightVal).toFixed(1)}px, ${(-k * upVal).toFixed(1)}px, ${(-k * backVal).toFixed(1)}px)` +
               ` scale(${(1 - k * 0.028).toFixed(3)})`;
             b.style.opacity = String(Math.max(0, 1 - k * 0.16));
             b.style.filter = k > 1.2 ? `blur(${Math.min(3, (k - 1.2) * 1.2).toFixed(2)}px)` : "";
             b.style.zIndex = String(200 - Math.round(k * 10));
           } else {
-            /* leaving: down + back, dissolving */
             const t = Math.min(1, -d / 1.1);
             b.style.transform =
-              `translate3d(${(-t * 40).toFixed(1)}px, ${(t * 230).toFixed(1)}px, ${(-t * 320).toFixed(1)}px)` +
+              `translate3d(${(-t * 30).toFixed(1)}px, ${(t * 180).toFixed(1)}px, ${(-t * 260).toFixed(1)}px)` +
               ` scale(${(1 - t * 0.06).toFixed(3)})`;
             b.style.opacity = String(Math.max(0, 1 - t * 1.35));
             b.style.filter = t > 0.25 ? `blur(${((t - 0.25) * 5).toFixed(2)}px)` : "";
@@ -104,7 +107,6 @@ export default function Experience() {
         setActive(Math.round(gsap.utils.clamp(0, n - 1, p)));
       };
 
-      /* ---- scroll → target → interpolation → transforms ---- */
       let target = 0;
       let current = 0;
       const tick = (_t: number, dt: number) => {
@@ -115,7 +117,6 @@ export default function Experience() {
       gsap.ticker.add(tick);
       place(0);
 
-      /* the Scene's sticky hold does the pinning; this only reads progress */
       const st = ScrollTrigger.create({
         ...sceneScrub(el),
         scrub: 0.5,
@@ -139,7 +140,6 @@ export default function Experience() {
         handlers.push([elm, h]);
       });
 
-      /* very small perspective response to the pointer */
       const stage = el.querySelector<HTMLElement>(`.${styles.stage}`);
       let rx: ReturnType<typeof gsap.quickTo> | null = null;
       let ry: ReturnType<typeof gsap.quickTo> | null = null;
@@ -173,20 +173,6 @@ export default function Experience() {
         handlers.forEach(([elm, h]) => elm.removeEventListener("click", h));
         el.classList.remove(styles.deckMode);
       };
-    });
-
-    mm.add("(max-width: 1000px), (prefers-reduced-motion: reduce)", () => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      gsap.utils.toArray<HTMLElement>(`.${styles.board}`).forEach((b) => {
-        gsap.from(b, {
-          y: 40,
-          autoAlpha: 0,
-          duration: 0.85,
-          ease: EASE.outExpo,
-          immediateRender: false,
-          scrollTrigger: { trigger: b, start: "top 88%" },
-        });
-      });
     });
 
     return () => mm.revert();

@@ -53,19 +53,19 @@ export default function Home() {
           <Journey />
         </Scene>
 
-        <Scene order={5} id="stack">
+        <Scene order={5} runway={3} id="stack" keepOnMobile>
           <DesignStack />
         </Scene>
 
-        <Scene order={6} runway={4.5} id="work">
+        <Scene order={6} runway={4.5} id="work" keepOnMobile>
           <Work />
         </Scene>
 
-        <Scene order={7} runway={4.4} id="experience">
+        <Scene order={7} runway={4.4} id="experience" keepOnMobile>
           <Experience />
         </Scene>
 
-        <Scene order={8} runway={3.5} id="credentials">
+        <Scene order={8} runway={3.5} id="credentials" keepOnMobile>
           <Certifications />
         </Scene>
 
