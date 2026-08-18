@@ -281,11 +281,11 @@ export default function DesignStack() {
         {/* orbiting cards — a real list, so screen readers get the full set */}
         <ul className={styles.orbit}>
           {TOOLS.map((t) => (
-            <li className={styles.card} key={t.name}>
-              <span className={styles.face}>
+            <li className={styles.card} key={t.name} title={t.name} aria-label={t.name}>
+              <span className={styles.face} title={t.name}>
                 <span className={styles.mark}>
                   {t.src ? (
-                    <img src={t.src} alt="" aria-hidden="true" />
+                    <img src={t.src} alt={t.name} />
                   ) : (
                     <span
                       className={styles.mono}

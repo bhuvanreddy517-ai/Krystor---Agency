@@ -483,16 +483,19 @@
     position: relative !important;
     height: auto;
     min-height: 260px;
-    transform: none !important;
-    opacity: 1 !important;
     visibility: visible !important;
     filter: none !important;
     padding: 0 24px 24px;
+    transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, opacity 0.35s ease;
+  }
+  .panel:active {
+    transform: translateY(-2px) scale(0.985);
   }
   .detail {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    overflow: visible !important;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;

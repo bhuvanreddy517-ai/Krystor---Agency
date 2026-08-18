@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { gsap, ScrollTrigger, prefersReducedMotion, EASE } from "@/lib/gsap";
 import { sceneScrub } from "@/lib/scene";
 import { PROJECTS } from "@/content/projects";
@@ -89,11 +90,22 @@ export default function Work() {
       return () => st.kill();
     });
 
-    /* Touch & reduced motion: the snap row needs no JS. The reveal tween that
-       used to live here could never run — the snap-row CSS pins the cards with
-       `transform: none !important; opacity: 1 !important`, which inline GSAP
-       styles cannot beat — so it was dead code that only risked flashing the
-       cards through a hidden state. The row simply renders. */
+    mm.add("(max-width: 1100px) and (prefers-reduced-motion: no-preference)", () => {
+      const cards = gsap.utils.toArray<HTMLElement>(`.${styles.card}`);
+      gsap.from(cards, {
+        y: 40,
+        scale: 0.94,
+        autoAlpha: 0,
+        duration: 0.85,
+        ease: EASE.outExpo,
+        stagger: 0.08,
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: el.querySelector(`.${styles.stage}`) || el,
+          start: "top 85%",
+        },
+      });
+    });
 
     return () => mm.revert();
   }, []);
@@ -120,7 +132,7 @@ export default function Work() {
         <div className={styles.track}>
           {PROJECTS.map((p, i) => (
             <article className={styles.card} key={p.slug} style={{ zIndex: 100 - i }}>
-              <a className={styles.inner} href={`/work/${p.slug}`}>
+              <Link className={styles.inner} href={`/work/${p.slug}`}>
                 <div
                   className={styles.cover}
                   style={
@@ -171,7 +183,7 @@ export default function Work() {
                     </span>
                   </div>
                 </div>
-              </a>
+              </Link>
               {/* verified destination — a sibling of the card link, so the
                   anchors never nest; sits over the cover's top-right. Live
                   site wins when a project has both. */}

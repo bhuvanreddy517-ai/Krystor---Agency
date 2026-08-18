@@ -350,12 +350,14 @@
     display: none;
   }
   .card {
-    position: static;
+    position: relative;
     flex: 0 0 82vw;
     max-width: 320px;
     scroll-snap-align: center;
-    transform: none !important;
-    opacity: 1 !important;
+    transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, opacity 0.35s ease;
+  }
+  .card:active {
+    transform: scale(0.97);
   }
   .cover {
     height: 240px;

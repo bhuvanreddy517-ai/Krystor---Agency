@@ -88,7 +88,6 @@
   gap: 32px;
 }
 
-/* Work Card */
 .card {
   background: #ffffff;
   border: 1.5px solid var(--line);
@@ -98,12 +97,28 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.45s var(--ease-out-expo), box-shadow 0.45s ease, border-color 0.45s ease;
+  animation: cardEntrance 0.7s var(--ease-out-expo) backwards;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .card:hover {
   transform: translateY(-8px) scale(1.015);
   box-shadow: 0 28px 70px -14px rgba(229, 9, 20, 0.18);
   border-color: rgba(229, 9, 20, 0.4);
+}
+
+.card:active {
+  transform: scale(0.97);
 }
 
 /* Cover Plate */

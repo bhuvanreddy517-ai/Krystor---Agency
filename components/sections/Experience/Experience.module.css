@@ -481,10 +481,12 @@
     gap: 14px;
     padding: 24px 24px;
     border-radius: 10px;
-    transform: none !important;
-    opacity: 1 !important;
     visibility: visible !important;
     filter: none !important;
+    transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, opacity 0.35s ease;
+  }
+  .board:active {
+    transform: translateY(-2px) scale(0.985);
   }
   .strip {
     height: auto;
@@ -515,10 +517,12 @@
   .type {
     margin-left: 0;
   }
-  .detailCol {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
+  .detailCol,
+  .logoBelow {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    overflow: visible !important;
   }
   .summary {
     -webkit-line-clamp: unset;

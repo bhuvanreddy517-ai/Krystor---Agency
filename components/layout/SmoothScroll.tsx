@@ -22,15 +22,20 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       setLenis(lenis);
     }
 
-    /* delegated: catches every same-page anchor on the site */
+    /* delegated: catches every same-page anchor on the site (including /#section) */
     const onClick = (e: MouseEvent) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey)
         return;
       const link = (e.target as Element)?.closest?.<HTMLAnchorElement>("a[href]");
       const href = link?.getAttribute("href");
-      if (!href || !href.startsWith("#")) return;
+      if (!href) return;
+      const isSamePageHash =
+        href.startsWith("#") ||
+        (href.startsWith("/#") && (window.location.pathname === "/" || window.location.pathname === ""));
+      if (!isSamePageHash) return;
+      const hash = href.startsWith("/#") ? href.substring(1) : href;
       e.preventDefault();
-      scrollToHash(href);
+      scrollToHash(hash);
     };
     document.addEventListener("click", onClick);
 
