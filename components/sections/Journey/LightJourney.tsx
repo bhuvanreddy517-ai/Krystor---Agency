@@ -409,7 +409,11 @@ export default function LightJourney() {
                 <p className={styles.introLabel}>
                   <span>02</span> {t("journey.eyebrow")}
                 </p>
-                <p className={styles.introLede}>{t("journey.lede")}</p>
+                <p className={styles.introLede}>
+                  From 2021 to 2026
+                  <br />
+                  — five years of ideas, evolution, and building Jernay into what it is today.
+                </p>
                 <p className={styles.introHint}>{t("journey.enter")}</p>
               </div>
 
@@ -417,11 +421,13 @@ export default function LightJourney() {
                 <article className={styles.chapter} key={c.id}>
                   <span className={styles.chYear}>{c.year}</span>
                   <h3 className={styles.chTitle}>{L(lang, c, "title")}</h3>
-                  <p className={styles.chPlace}>{L(lang, c, "place")}</p>
+                  {c.place && <p className={styles.chPlace}>{L(lang, c, "place")}</p>}
                   <p className={styles.chStory}>{L(lang, c, "story")}</p>
-                  <p className={styles.chBridge}>
-                    <i aria-hidden="true">→</i> {L(lang, c, "bridge")}
-                  </p>
+                  {c.bridge && (
+                    <p className={styles.chBridge}>
+                      <i aria-hidden="true">→</i> {L(lang, c, "bridge")}
+                    </p>
+                  )}
                 </article>
               ))}
 
@@ -439,7 +445,7 @@ export default function LightJourney() {
                     />
                   ))}
                 </span>
-              </div>
+                </div>
             </div>
 
             <div className={styles.whiteout} aria-hidden="true" />
@@ -449,15 +455,17 @@ export default function LightJourney() {
         {/* ---------- the same story, readable without motion ---------- */}
         <div className={isStatic ? styles.staticStory : styles.srOnly}>
           <h2>{t("journey.eyebrow")}</h2>
-          <p className={styles.staticLede}>{t("journey.lede")}</p>
+          <p className={styles.staticLede}>
+            From 2021 to 2026 — five years of ideas, evolution, and building Jernay into what it is today.
+          </p>
           <ol>
             {CHAPTERS.map((c) => (
               <li key={c.id}>
                 <span className={styles.staticYear}>{c.year}</span>
                 <h3>{L(lang, c, "title")}</h3>
-                <p className={styles.staticPlace}>{L(lang, c, "place")}</p>
+                {c.place && <p className={styles.staticPlace}>{L(lang, c, "place")}</p>}
                 <p>{L(lang, c, "story")}</p>
-                <p className={styles.staticBridge}>{L(lang, c, "bridge")}</p>
+                {c.bridge && <p className={styles.staticBridge}>{L(lang, c, "bridge")}</p>}
               </li>
             ))}
           </ol>

@@ -20,115 +20,53 @@ export type Chapter = {
   id: string;
   year: string;
   title: string;
-  place: string;
+  place?: string;
   story: string;
-  bridge: string;
+  bridge?: string;
   fr?: { title?: string; place?: string; story?: string; bridge?: string };
 };
 
 export const CHAPTERS: Chapter[] = [
   {
-    id: "roots",
+    id: "2021",
     year: "2021",
-    title: "Roots",
-    place: "Telangana, India",
+    title: "THE BEGINNING",
     story:
-      "Where the story starts. Southern India — the fixed point everything after it gets measured against: seven roles, two countries, and one deliberate change of craft.",
-    bridge: "It started with a sales target, not a design brief.",
-    fr: {
-      title: "Racines",
-      place: "Telangana, Inde",
-      story:
-        "Là où l’histoire commence. Le sud de l’Inde — le point fixe auquel tout se mesure ensuite : sept postes, deux pays, et un changement de métier assumé.",
-      bridge: "Cela a commencé par un objectif de vente, pas par un brief de design.",
-    },
+      "A vision takes shape. Jernay begins with a passion for creativity, technology, and building meaningful digital experiences.",
   },
   {
-    id: "customers",
+    id: "2022",
     year: "2022",
-    title: "Customers first, pixels much later",
-    place: "Tutorac → Sage Finance · Telangana",
+    title: "THE FOUNDATION",
     story:
-      "Business development for a subscription e-learning platform: reading why people renewed, why they left, and what actually moved a portfolio. $50K+ in subscriptions in a single month. By September I had moved to Sage Finance.",
-    bridge:
-      "Two years of asking customers questions before I ever opened a design tool — still the part of my process I trust most.",
-    fr: {
-      title: "Les clients d’abord, les pixels bien plus tard",
-      place: "Tutorac → Sage Finance · Telangana",
-      story:
-        "Développement commercial pour une plateforme d’e-learning par abonnement : comprendre pourquoi on renouvelle, pourquoi on part, ce qui fait vraiment bouger un portefeuille. Plus de 50 000 $ d’abonnements en un mois. En septembre, je rejoignais Sage Finance.",
-      bridge:
-        "Deux ans à interroger des clients avant d’ouvrir le moindre outil de design — c’est resté la partie de mon processus en laquelle j’ai le plus confiance.",
-    },
+      "The vision starts becoming reality. New skills, new ideas, and a growing foundation in web development, design, and digital solutions.",
   },
   {
-    id: "playbook",
+    id: "2023",
     year: "2023",
-    title: "Writing the playbook",
-    place: "Sage Finance · Telangana, India",
+    title: "CREATIVE EXPANSION",
     story:
-      "A full year owning sales strategy and client acquisition: market analysis, segmentation, pipeline against tracked KPIs. I wrote the inbound-to-close playbook the wider sales team adopted, and a $20K+ week turned into a promotion to Marketing Team Lead.",
-    bridge:
-      "That playbook was the first time I designed a system instead of working inside one. I wanted to learn how to do it properly.",
-    fr: {
-      title: "Écrire le playbook",
-      place: "Sage Finance · Telangana, Inde",
-      story:
-        "Une année entière à piloter la stratégie commerciale et l’acquisition client : analyse de marché, segmentation, pipeline face aux KPI suivis. J’ai écrit le playbook inbound-to-close adopté par toute l’équipe, et une semaine à plus de 20 000 $ est devenue une promotion au marketing.",
-      bridge:
-        "Ce playbook a été la première fois que je concevais un système au lieu de travailler dedans. Restait à apprendre à le faire vraiment.",
-    },
+      "Jernay moves beyond development, embracing video editing, UI/UX design, visual storytelling, and content strategy.",
   },
   {
-    id: "france",
+    id: "2024",
     year: "2024",
-    title: "Starting over, in French",
-    place: "Montpellier Business School · France",
+    title: "THE EVOLUTION",
     story:
-      "August closed the India chapter. September opened an MSc in International Business at Montpellier Business School — new country, new language, and the formal training my instincts had been running without.",
-    bridge: "Business school handed me the vocabulary. The next year handed me the craft.",
-    fr: {
-      title: "Tout recommencer, en français",
-      place: "Montpellier Business School · France",
-      story:
-        "Août a refermé le chapitre indien. Septembre a ouvert un MSc International Business à Montpellier Business School — nouveau pays, nouvelle langue, et la formation qui manquait à des intuitions déjà en marche.",
-      bridge: "L’école m’a donné le vocabulaire. L’année suivante m’a donné le métier.",
-    },
+      "Bigger projects. Stronger experiences. Jernay grows into a more complete creative and digital partner for ambitious ideas.",
   },
   {
-    id: "three-rooms",
+    id: "2025",
     year: "2025",
-    title: "Three rooms, one question",
-    place: "Montpellier · Los Gatos (remote) · Paris",
+    title: "STRATEGIC GROWTH",
     story:
-      "Three roles in one year. SEO and CRO at Site Web & Co — 35% organic growth, won by fixing templates rather than pages. Human-in-the-loop AI at Oigetit — teaching a misinformation engine to explain itself. Process analysis at V Raise in Paris — 12% efficiency across logistics workflows.",
-    bridge:
-      "Measurement, trust and systems: three different rooms, all asking how you make something complex feel obvious. That question has a job title.",
-    fr: {
-      title: "Trois terrains, une seule question",
-      place: "Montpellier · Los Gatos (à distance) · Paris",
-      story:
-        "Trois postes en un an. SEO et CRO chez Site Web & Co — +35 % de trafic organique, gagnés en corrigeant les gabarits plutôt que les pages. IA « human-in-the-loop » chez Oigetit — apprendre à un moteur anti-désinformation à s’expliquer. Analyse de processus chez V Raise à Paris — +12 % d’efficacité sur les flux logistiques.",
-      bridge:
-        "Mesure, confiance, systèmes : trois terrains différents, une même question — comment rendre le complexe évident ? Cette question a un intitulé de poste.",
-    },
+      "Development meets strategy. SMM, SEO, analytics, content, and visual storytelling come together to create digital experiences built for growth.",
   },
   {
-    id: "product",
+    id: "2026",
     year: "2026",
-    title: "The job it was heading toward",
-    place: "Sophia Antipolis, France",
+    title: "THE NEXT CHAPTER",
     story:
-      "March: first place at the UNBIAS hackathon with LockAI, a privacy-first offline AI assistant — strategy, UX and three working prototypes in one sprint. May: Product Designer at Heeding, designing the UX of a sustainable-fuel marketplace aimed at a billion tonnes of avoided CO₂.",
-    bridge:
-      "Selling taught me customers. Analysis taught me systems. Design is where the two finally do the same job.",
-    fr: {
-      title: "Le métier vers lequel tout allait",
-      place: "Sophia Antipolis, France",
-      story:
-        "Mars : première place au hackathon UNBIAS avec LockAI, un assistant IA hors-ligne axé confidentialité — stratégie, UX et trois prototypes fonctionnels en un sprint. Mai : Product Designer chez Heeding, l’UX d’une marketplace de carburants durables visant un milliard de tonnes de CO₂ évitées.",
-      bridge:
-        "La vente m’a appris les clients. L’analyse m’a appris les systèmes. Le design est l’endroit où les deux font enfin le même travail.",
-    },
+      "Five years of learning, building, and evolving lead to a new chapter — Jernay as a full-service digital creative agency, built for bigger ideas and greater impact.",
   },
 ];

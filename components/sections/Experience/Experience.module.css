@@ -443,15 +443,23 @@
 /* below the deck breakpoint: honest vertical boards, all content readable */
 @media (max-width: 1000px) {
   .experience {
-    padding: 80px 0;
+    padding: 60px 0 30px;
   }
   .header {
     padding: 0 24px;
   }
+  .eyebrow {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .h2 {
+    font-size: clamp(28px, 7vw, 44px);
+    line-height: 1.05;
+  }
   .stageWrap {
     display: block;
     perspective: none;
-    margin-top: 32px;
+    margin-top: 24px;
   }
   .stage {
     position: static;

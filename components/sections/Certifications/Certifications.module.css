@@ -421,17 +421,38 @@
 /* ============ responsive ============ */
 @media (max-width: 1000px) {
   .certs {
-    padding: 80px 0;
+    padding: 60px 0 30px;
   }
   .head,
   .foot {
     padding-left: 24px;
     padding-right: 24px;
   }
+  .eyebrow {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .h2 {
+    font-size: clamp(28px, 7vw, 44px);
+    line-height: 1.05;
+  }
+  .lede {
+    font-size: clamp(13.5px, 3.6vw, 16px);
+    line-height: 1.45;
+    margin-top: 10px;
+  }
+  .title {
+    font-size: clamp(20px, 5vw, 28px);
+    line-height: 1.15;
+  }
+  .record {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 10px;
+  }
   .stageWrap {
     display: block;
     perspective: none;
-    margin-top: 28px;
+    margin-top: 24px;
   }
   .stage {
     position: static;
