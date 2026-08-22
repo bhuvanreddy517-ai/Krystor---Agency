@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
       bg: "#0F172A",
       ink: "light",
       variant: "photo",
-      src: "/images/projects/dental-affection-cover.jpg",
+      src: "/images/projects/smile-dental-clinic-cover.jpg",
       focus: "center center",
     },
     site: { url: "https://simle-dental-clinic-zeta.vercel.app/", label: "simle-dental-clinic-zeta.vercel.app" },
