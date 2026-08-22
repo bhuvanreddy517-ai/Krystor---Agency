@@ -71,6 +71,133 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
+  /* ─────────────── SMILE DENTAL CLINIC (Live App) ─────────────── */
+  {
+    slug: "smile-dental-clinic",
+    title: "Smile Dental Clinic — Modern Dental Care & Patient Portal",
+    tags: ["Healthcare UX", "Patient Portal", "React", "Design System"],
+    year: "2026",
+    oneLiner:
+      "A calm, patient-centric digital healthcare platform and appointment scheduling system for modern dental practices.",
+    contribution:
+      "UX architecture, patient scheduling flow, and compassionate healthcare UI design system.",
+    coverLabel: "SMILE DENTAL CLINIC",
+    cover: {
+      bg: "#0F172A",
+      ink: "light",
+      variant: "photo",
+      src: "/images/projects/dental-affection-cover.jpg",
+      focus: "center center",
+    },
+    site: { url: "https://simle-dental-clinic-zeta.vercel.app/", label: "simle-dental-clinic-zeta.vercel.app" },
+    fr: {
+      title: "Smile Dental Clinic — Portail Patient & Soins Dentaires",
+      oneLiner: "Une plateforme de santé numérique apaisante et système de prise de rendez-vous pour cabinets dentaires.",
+      contribution: "Architecture UX, parcours patient et design system médical.",
+      tags: ["UX Santé", "Portail Patient", "React", "Design System"],
+      study: {
+        role: "Product Designer & développeur Lead",
+        timeline: "2026",
+        context: "Conception d'un portail patient apaisant et accessible.",
+        problem: "Réduire l'anxiété dentaire grâce à un parcours digital clair.",
+        process: [{ title: "Parcours apaisé", body: "Information claire et réservation en 2 clics." }],
+        decisions: [{ title: "Confiance visuelle", why: "Utilisation de tons apaisants et de typographies lisibles." }],
+        outcomes: ["Déployé et en ligne sur Vercel"],
+        reflection: "Le design de santé exige de l'empathie avant la technique."
+      }
+    },
+    study: {
+      role: "Lead Product Designer & Developer",
+      timeline: "2026",
+      context:
+        "Designing a reassuring, accessible digital healthcare portal for modern dental clinics.",
+      problem:
+        "Medical websites are often intimidating and hard to navigate. The goal: replace dental anxiety with clarity, empathy, and easy online scheduling.",
+      process: [
+        {
+          title: "Empathy-Driven UX",
+          body: "Clear treatment guides, transparent pricing, and instant online doctor selection.",
+        },
+        {
+          title: "Accessible UI System",
+          body: "High-contrast, large touch targets, and AAA accessibility standards.",
+        },
+      ],
+      decisions: [
+        {
+          title: "Calm visual tone",
+          why: "Deep blues and soft neutrals lower cognitive stress during medical appointment booking.",
+        },
+      ],
+      outcomes: ["Live production deployment on Vercel"],
+      reflection:
+        "In healthcare UX, clarity and empathy are the most critical features.",
+    },
+  },
+
+  /* ─────────────── DENTAL AFFECTION (Live App) ─────────────── */
+  {
+    slug: "dental-affection",
+    title: "Dental Affection — Digital Healthcare & Patient Portal",
+    tags: ["Healthcare UX", "Patient Portal", "React", "Design System"],
+    year: "2026",
+    oneLiner:
+      "A patient-centric digital healthcare platform and appointment scheduling experience.",
+    contribution:
+      "UX architecture, patient scheduling flow, and healthcare UI design system.",
+    coverLabel: "DENTAL AFFECTION",
+    cover: {
+      bg: "linear-gradient(135deg, #0284c7 0%, #0f172a 100%)",
+      ink: "light",
+      variant: "photo",
+      src: "/images/projects/dental-affection-cover.jpg",
+      focus: "top center",
+    },
+    site: { url: "https://dental-affection.vercel.app/", label: "dental-affection.vercel.app" },
+    fr: {
+      title: "Dental Affection — Portail Patient & Soins Dentaires",
+      oneLiner: "Une plateforme de santé numérique apaisante et système de prise de rendez-vous pour cabinets dentaires.",
+      contribution: "Architecture UX, parcours patient et design system médical.",
+      tags: ["UX Santé", "Portail Patient", "React", "Design System"],
+      study: {
+        role: "Product Designer & développeur Lead",
+        timeline: "2026",
+        context: "Conception d'un portail patient apaisant et accessible.",
+        problem: "Réduire l'anxiété dentaire grâce à un parcours digital clair.",
+        process: [{ title: "Parcours apaisé", body: "Information claire et réservation en 2 clics." }],
+        decisions: [{ title: "Confiance visuelle", why: "Utilisation de tons apaisants et de typographies lisibles." }],
+        outcomes: ["Déployé et en ligne sur Vercel"],
+        reflection: "Le design de santé exige de l'empathie avant la technique."
+      }
+    },
+    study: {
+      role: "Lead Product Designer & Developer",
+      timeline: "2026",
+      context:
+        "Designing a reassuring, accessible digital healthcare portal for modern dental clinics.",
+      problem:
+        "Medical websites are often intimidating and hard to navigate. The goal: replace dental anxiety with clarity, empathy, and easy online scheduling.",
+      process: [
+        {
+          title: "Empathy-Driven UX",
+          body: "Clear treatment guides, transparent pricing, and instant online doctor selection.",
+        },
+        {
+          title: "Accessible UI System",
+          body: "High-contrast, large touch targets, and AAA accessibility standards.",
+        },
+      ],
+      decisions: [
+        {
+          title: "Calm visual tone",
+          why: "Deep blues and soft neutrals lower cognitive stress during medical appointment booking.",
+        },
+      ],
+      outcomes: ["Live production deployment on Vercel"],
+      reflection:
+        "In healthcare UX, clarity and empathy are the most critical features.",
+    },
+  },
   /* ─────────────── 0 · AURA STUDIO (3D Interior) ─────────────── */
   {
     slug: "aura-studio-3d-interior",
@@ -1441,69 +1568,7 @@ export const PROJECTS: Project[] = [
     },
   },
 
-  /* ─────────────── DENTAL AFFECTION (Live App) ─────────────── */
-  {
-    slug: "dental-affection",
-    title: "Dental Affection — Modern Dental Care & Patient Portal",
-    tags: ["Healthcare UX", "Patient Portal", "React", "Design System"],
-    year: "2026",
-    oneLiner:
-      "A calm, patient-centric digital healthcare platform and appointment scheduling system for modern dental practices.",
-    contribution:
-      "UX architecture, patient scheduling flow, and compassionate healthcare UI design system.",
-    coverLabel: "DENTAL AFFECTION",
-    cover: {
-      bg: "#0F172A",
-      ink: "light",
-      variant: "photo",
-      src: "/images/projects/dental-affection-cover.jpg",
-      focus: "center center",
-    },
-    site: { url: "https://dental-affection.vercel.app/", label: "dental-affection.vercel.app" },
-    fr: {
-      title: "Dental Affection — Portail Patient & Soins Dentaires",
-      oneLiner: "Une plateforme de santé numérique apaisante et système de prise de rendez-vous pour cabinets dentaires.",
-      contribution: "Architecture UX, parcours patient et design system médical.",
-      tags: ["UX Santé", "Portail Patient", "React", "Design System"],
-      study: {
-        role: "Product Designer & développeur Lead",
-        timeline: "2026",
-        context: "Conception d'un portail patient apaisant et accessible.",
-        problem: "Réduire l'anxiété dentaire grâce à un parcours digital clair.",
-        process: [{ title: "Parcours apaisé", body: "Information claire et réservation en 2 clics." }],
-        decisions: [{ title: "Confiance visuelle", why: "Utilisation de tons apaisants et de typographies lisibles." }],
-        outcomes: ["Déployé et en ligne sur Vercel"],
-        reflection: "Le design de santé exige de l'empathie avant la technique."
-      }
-    },
-    study: {
-      role: "Lead Product Designer & Developer",
-      timeline: "2026",
-      context:
-        "Designing a reassuring, accessible digital healthcare portal for modern dental clinics.",
-      problem:
-        "Medical websites are often intimidating and hard to navigate. The goal: replace dental anxiety with clarity, empathy, and easy online scheduling.",
-      process: [
-        {
-          title: "Empathy-Driven UX",
-          body: "Clear treatment guides, transparent pricing, and instant online doctor selection.",
-        },
-        {
-          title: "Accessible UI System",
-          body: "High-contrast, large touch targets, and AAA accessibility standards.",
-        },
-      ],
-      decisions: [
-        {
-          title: "Calm visual tone",
-          why: "Deep blues and soft neutrals lower cognitive stress during medical appointment booking.",
-        },
-      ],
-      outcomes: ["Live production deployment on Vercel"],
-      reflection:
-        "In healthcare UX, clarity and empathy are the most critical features.",
-    },
-  },
+
 
   /* ─────────────── PASTELITO (Live App) ─────────────── */
   {
